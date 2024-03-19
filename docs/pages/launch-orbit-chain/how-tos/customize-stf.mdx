@@ -6,7 +6,7 @@ sidebar_position: 4
 content_type: how-to
 ---
 
-import PublicPreviewBannerPartial from '../partials/_orbit-public-preview-banner-partial.md';
+import PublicPreviewBannerPartial from "../partials/_orbit-public-preview-banner-partial.md";
 
 <PublicPreviewBannerPartial />
 
@@ -111,7 +111,7 @@ With that, you have now two ways of running your node.
 
 **1. Using the docker-compose file**
 
-This is the recommended way if you're running your Orbit chain locally through the provided [docker-compose file](https://github.com/OffchainLabs/orbit-setup-script/blob/main/docker-compose.yaml#L39). In `docker-compose.yml`, modify the Docker image used for the Nitro container:
+This is the recommended way if you're running your Orbit chain locally through the provided [docker-compose file](https://github.com/OffchainLabs/orbit-setup-script/blob/main/docker-compose.yaml#L39). In `docker-compose.yml`, modify the Docker image used for the Nitro container
 
 ```
 ...
@@ -181,7 +181,7 @@ After that, you'll have, again, two ways of running your node.
 
 **1. Using the docker-compose file**
 
-As mentioned before, this is the recommended way if you're running your Orbit chain locally through the provided [docker-compose file](https://github.com/OffchainLabs/orbit-setup-script/blob/main/docker-compose.yaml#L39). In `docker-compose.yml`, modify the Docker image used for the Nitro container. Notice that we'll now use the `custom-nitro-node-dev` you just created:
+As mentioned before, this is the recommended way if you're running your Orbit chain locally through the provided [docker-compose file](https://github.com/OffchainLabs/orbit-setup-script/blob/main/docker-compose.yaml#L39). In `docker-compose.yml`, modify the Docker image used for the Nitro container. Notice that we'll now use the `custom-nitro-node-dev` you just created
 
 ```
 ...
@@ -224,7 +224,7 @@ There you'll find the three versions of the replay binary mentioned earlier:
 Now that you've extracted the replay binary, there are two ways to add it to future Docker images,
 including non-dev image builds. You can either keep it locally and copy it in, or host it on the web.
 
-##### Option 1: Store the extracted replay binary locally
+##### Option 1 Store the extracted replay binary locally
 
 Now that we've extracted the replay binary, we can modify the Dockerfile to copy it into new Docker builds.
 Edit the `Dockerfile` file in the root of the nitro folder, and after all the `RUN ./download-machines.sh ...` lines, add:
@@ -236,7 +236,7 @@ RUN ln -sfT <wasm module root> latest
 
 Replace each `<wasm module root>` with the WASM module root you got earlier.
 
-##### Option 2: Host the replay binary on the web
+##### Option 2 Host the replay binary on the web
 
 To support building the Docker image on other computers without this local machine directory,
 you'll need to either commit the machine to git, or preferably, host the replay binary on the web.

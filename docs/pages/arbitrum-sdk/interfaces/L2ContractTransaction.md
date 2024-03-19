@@ -1,6 +1,6 @@
 ---
 id: "L2ContractTransaction"
-title: "Interface: L2ContractTransaction"
+title: "Interface L2ContractTransaction"
 sidebar_label: "L2ContractTransaction"
 sidebar_position: 0
 custom_edit_url: null

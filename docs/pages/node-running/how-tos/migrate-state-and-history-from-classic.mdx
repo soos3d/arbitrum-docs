@@ -26,7 +26,7 @@ To successfully migrate the state and history of the chain from a classic (pre-N
 - A fully synced classic node: you can find instructions on how to run a classic node in [this page](/node-running/how-tos/running-a-classic-node.mdx).
 - A clean, uninitialized Nitro node: you can find instructions on how to set up a Nitro node in [this page](/node-running/how-tos/running-a-full-node.mdx).
 
-## Step 1: Enable export options in your classic node
+## Step 1 Enable export options in your classic node
 
 Launch your classic node with the option `--node.rpc.nitroexport.enable=true`. All exported data will be written to directory "nitroexport" under the classic instance directory (e.g. `${HOME}/.arbitrum/mainnet/nitroexport`). Make sure the classic node has read the entire rollup state.
 
@@ -44,7 +44,7 @@ Exporting the state of your own classic node should produce the same state as us
 
 :::
 
-## Step 2: Export information from your classic node
+## Step 2 Export information from your classic node
 
 ### Block & transaction history
 
@@ -69,7 +69,7 @@ This data does not impact consensus and is optional. It allows a Nitro node to p
 - Calling `arb_exportOutboxStatus` will return the latest outbox batch exported, or an error if the export failed.
 - Data will be stored in the directory `nitroexport/nitro/classic-msg`.
 
-## Step 3: Initialize your Nitro node importing the exported data
+## Step 3 Initialize your Nitro node importing the exported data
 
 - Place the `l2chaindata` and `classic-msg` (if exported) directories in Nitro's instance directory (e.g. `${HOME}/.arbitrum/arb1-nitro/`).
 - Launch the Nitro node with the argument `--init.import-file=/path/to/state/index.json`

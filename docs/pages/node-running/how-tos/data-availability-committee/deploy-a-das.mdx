@@ -77,7 +77,7 @@ DA servers also have an optional REST aggregator which, when a data batch is not
 
 ## How to deploy the DAS
 
-### Step 0: Prerequisites
+### Step 0 Prerequisites
 
 Gather the following information:
 
@@ -86,16 +86,7 @@ Gather the following information:
 - The SequencerInbox contract address in the parent chain.
 - If you wish to configure a [REST aggregator for your DAS](#state-synchronization), you'll need the URL where the list of REST endpoints is kept.
 
-{/\*
-In terms of hardware requirements, these are the minimum specs that your infrastructure should comply with to run a stable DAS:
-
-- RAM:
-- CPU:
-
-Depending on the storage backend you use for your DAS, you'll need to configure the appropriate infrastructure: for example, an S3 bucket if you choose S3, or a local volume if you choose any of the local backend options. When using a local volume, it is recommended to use …
-\*/}
-
-### Step 1: Generate the BLS keypair
+### Step 1 Generate the BLS keypair
 
 Next, we'll generate a BLS keypair. The private key will be used to sign the <a data-quicklook-from="data-availability-certificate">Data Availability Certificates (DACert)</a> when receiving requests to store data, and the public key will be used to prove that the DACert was signed by the DAS. The BLS private key is sensitive and care must be taken to ensure it is generated and stored in a safe environment.
 
@@ -110,7 +101,7 @@ docker run -v $(pwd)/bls_keys:/data/keys --entrypoint datool \
 @latestNitroNodeImage@ keygen --dir /data/keys
 ```
 
-### Step 2: Deploy the DAS
+### Step 2 Deploy the DAS
 
 To run the DAS, we'll use the `daserver` tool and we'll configure the following parameters:
 
@@ -149,29 +140,10 @@ To enable the REST aggregator, use the following parameters:
 
 Finally, for the storage backends you wish to configure, use the following parameters. Toggle between the different options to see all available parameters.
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 import S3Parameters from "./partials/parameters/_s3-parameters.mdx";
 import LocalBadgerDBParameters from "./partials/parameters/_local-badger-db-parameters.mdx";
 import LocalFilesParameters from "./partials/parameters/_local-files-parameters.mdx";
 import IPFSParameters from "./partials/parameters/_ipfs-parameters.mdx";
-
-<div className="dynamic-content-tabs">
-  <Tabs className="tabgroup" defaultValue={null}>
-    <TabItem value="s3-bucket" label="AWS S3 bucket">
-      <S3Parameters />
-    </TabItem>
-    <TabItem value="badger-db" label="Local Badger database">
-      <LocalBadgerDBParameters />
-    </TabItem>
-    <TabItem value="local-files" label="Local files">
-      <LocalFilesParameters />
-    </TabItem>
-    <TabItem value="ipfs" label="IPFS">
-      <IPFSParameters />
-    </TabItem>
-  </Tabs>
-</div>
 
 Here's an example `daserver` command for a DAS that:
 
@@ -291,7 +263,7 @@ A helm chart is available at [ArtifactHUB](https://artifacthub.io/packages/helm/
 
 Once the DAS is running, we can test if everything is working correctly using the following methods.
 
-### Test 1: RPC health check
+### Test 1 RPC health check
 
 The RPC interface enabled in the DAS has a health check for the underlying storage that can be invoked by using the RPC method  `das_healthCheck` that returns `200` if the DAS is active.
 
@@ -304,13 +276,13 @@ curl -X POST \
      <YOUR RPC ENDPOINT>
 ```
 
-### Test 2: Store and retrieve data
+### Test 2 Store and retrieve data
 
 The RPC interface of the DAS validates that requests to store data are signed by the sequencer's ECDSA key, identified via a call to the `SequencerInbox` contract on the parent chain. It can also be configured to accept store requests signed with another ECDSA key of your choosing. This could be useful for running load tests, canaries, or troubleshooting your own infrastructure.
 
 Using this facility, a load test could be constructed by writing a script to store arbitrary amounts of data at an arbitrary rate; a canary could be constructed to store and retrieve data on some interval. We show here a short guide on how to do that.
 
-#### Step 1: Generate an ECDSA keypair
+#### Step 1 Generate an ECDSA keypair
 
 First we'll generate an ECDSA keypair with `datool keygen`. Create a folder inside `/some/local/dir` to store the ECDSA keypair, for example `/some/local/dir/keys`. Then run `datool keygen`:
 
@@ -324,7 +296,7 @@ You can also use the `docker run` command as follows:
 docker run --rm -it -v /some/local/dir:/home/user/data --entrypoint datool @latestNitroNodeImage@ keygen --dir /home/user/data/keys --ecdsa
 ```
 
-#### Step 2: Change the DAS configuration and restart the server
+#### Step 2 Change the DAS configuration and restart the server
 
 Add the following configuration parameter to `daserver`:
 
@@ -340,7 +312,7 @@ OR
 
 And then restart it.
 
-#### Step 3: Store data signed with the ECDSA private key
+#### Step 3 Store data signed with the ECDSA private key
 
 Now you can use the `datool` utility to send store requests signed with the ECDSA private key:
 
@@ -362,7 +334,7 @@ docker run --rm -it -v /some/local/dir:/home/user/data --network="host" --entryp
 
 The above command will output the `Hex Encoded Data Hash` which can then be used to retrieve the data in the next step.
 
-#### Step 4: Retrieve the stored data
+#### Step 4 Retrieve the stored data
 
 Use again the `datool` to retrieve the stored data. Notice that to perform this step you must have the REST interface enabled in the DAS:
 
@@ -380,7 +352,7 @@ If we set `0xDataHash` to `0x052cca0e379137c975c966bcc69ac8237ac38dc1fcf21ac9a65
 
 The retention period defaults to 24 hours, but can be configured when calling `datool client rpc store` with the parameter `--das-retention-period` and the number of milliseconds for the retention period.
 
-### Test 3: REST health check
+### Test 3 REST health check
 
 The REST interface has a health check on the path `/health` which will return `200` if the underlying storage is working, otherwise `503`.
 

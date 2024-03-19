@@ -7,7 +7,7 @@ author: dlee
 
 ArbOS 20 Atlas is shipped via Nitro v2.3.1, which is available on Docker hub with the image tag: `offchainlabs/nitro-node:v2.3.1-26fad6f`. This release of Nitro is a mandatory upgrade for Arbitrum One and Nova validators.For Arbitrum One and Nova, the ArbOS 20 upgrade requires a governance vote to activate.
 
-### Requirements:
+### Requirements
 
 - [Nitro v2.3.1](https://github.com/OffchainLabs/nitro/releases/tag/v2.3.1) or higher
 - [nitro-contracts v1.2.1](https://github.com/OffchainLabs/nitro-contracts/releases/tag/v1.2.1) or higher
@@ -26,7 +26,7 @@ ArbOS 20 is an upgrade to enable Arbitrum's support for L1 Ethereum's [Dencun up
 - Increasing the max block height that a batch can be posted, relative to the current block, to 64 bringing this in line with Ethereum's finality guarantees. The current value of 12 was set prior to the Ethereum merge and could mean that a small L1 reorg can cause an otherwise valid batch to revert.
 - Fix Sequencer Inbox bug: when posting a batch, the Sequencer provides the "newMessageCount” value as a parameter; if the Sequencer is malicious, it can provide the max uint256 value which in turn would make subsequent calls to forceInclusion revert with an overflow error. Atlas’s upgrade to the Sequencer inbox includes a [change](https://github.com/OffchainLabs/nitro-contracts/blob/dcc51066b26b84cb157cbeba2f9f492ab33f9093/src/bridge/SequencerInbox.sol#L327)) in which forceInclusion does not modify the message count, fixing this bug. This bug had been disclosed to Arbitrum RaaS providers and to the Arbitrum DAO Security Council.
 
-### Special notes on ArbOS 20: Atlas support for EIP-4844
+### Special notes on ArbOS 20 Atlas support for EIP-4844
 
 - Upgrading to **the Atlas ArbOS release will require access to L1 Ethereum beacon chain endpoints to retrieve blob data. For nodes of a chain that come online 18 days after Atlas gets activated on their chain will need access to historical data to sync up to the latest state.** If you are not operating your own Ethereum consensus client, [please visit this page to view a list of beacon chain RPC providers](../ethereum-beacon-rpc-providers.mdx) where you can access blob data.
 - Applications on Arbitrum will not have to be modified or take any explicit action to get the benefits of using EIP-4844 (i.e. the whole chain opts-in with ArbOS 20 “Atlas”).
@@ -34,7 +34,7 @@ ArbOS 20 is an upgrade to enable Arbitrum's support for L1 Ethereum's [Dencun up
 - There currently aren’t estimates on what the end-user gas savings of using blob data will be. This topic is something being actively worked on and monitored. Without Mainnet data, the estimates for blob gas prices will not be accurate enough to reliably predict the cost reductions that users will experience - and even with Mainnet data, the savings will vary by use case (i.e. no current way to predict the price impacts from all blob gas market participants yet). In general, however, the use of blobs will reduce the cost of using Arbitrum L2s. To learn more about what EIP-4844 will mean for L2 users, please checkout this [blog post on Medium by Offchain Lab's Co-foudner and Chief Scientist Ed Felten](https://medium.com/offchainlabs/eip-4844-what-does-it-mean-for-l2-users-5e86ebc4c028).
 - Arbitrum Nitro node software is incompatible with Erigon's Consensus Layer client, Caplin, due to a formatting mismatch for a specific response type (i.e. `SecondsPerSlot` is used in Caplin instead of `SECONDS_PER_SLOT`).
 
-### Additional requirement for Arbitrum Orbit L2 chain operators: enabling blob batch posting
+### Additional requirement for Arbitrum Orbit L2 chain operators enabling blob batch posting
 
 This section maps to [Step 4 in the guide on _How to upgrade ArbOS on your Arbitrum Orbit L2 chain_](../../../launch-orbit-chain/how-tos/arbos-upgrade.md#step-4-enable-arbos-specific-configurations-or-feature-flags-not-always-required) and contains additional instructions for Arbitrum Orbit L2 chain operators for ArbOS 20 Atlas. Specifically, the details below are meant to help Arbitrum Orbit L2 chain operators enable blob batch posting to L1 Ethereum following their successful upgrade to the ArbOS 20 Atlas release.
 

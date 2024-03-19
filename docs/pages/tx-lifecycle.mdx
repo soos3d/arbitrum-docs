@@ -40,7 +40,7 @@ Upon receiving a transaction, the Sequencer will:
 - [Geth](./arbos/geth.mdx)
 - [L1 pricing](./arbos/l1-pricing.mdx) / [L2 Gas](./arbos/gas.mdx)
 
-#### ~ ~ ~ FINALITY CHECK: Trusted / Soft Confirmation ~ ~ ~
+#### ~ ~ ~ FINALITY CHECK Trusted / Soft Confirmation ~ ~ ~
 
 At this phase, the client's acceptance of finality relies on trusting the Sequencer. I.e., a malicious/faulty Sequencer could deviate between what it promised in the transaction receipt and what is ultimately published in a batch (see phase 3).
 
@@ -68,7 +68,7 @@ The Sequencer is forced to include messages from the delayed Inbox in the queued
 
 - ["The Sequencer / Censorship Resistance."](./sequencer.mdx)
 
-#### ~ ~ ~ FINALITY CHECK: Ethereum-Equivalent Finality! ~ ~ ~
+#### ~ ~ ~ FINALITY CHECK Ethereum-Equivalent Finality! ~ ~ ~
 
 At this stage, assuming that a client believes there to be at least one well behaved active Arbitrum validator. Currently, the process of validation on the Arbitrum protocol is permissioned, but it's important to be aware that our latest dispute protocol, [BOLD (Bounded Liquidity Delay)](https://medium.com/offchainlabs/bold-permissionless-validation-for-arbitrum-chains-9934eb5328cc), has the potential to allow validation on Arbitrum chains without requiring permission, thereby potentially eliminating the necessity for restricted validation. The client can treat their transaction's finality as equivalent to an ordinary Ethereum transaction. In other words, their L2 transaction has the same finality as the L1 transaction that recorded it in a batch. This means the client should use whatever finality heuristic they use for regular Ethereum transactions (i.e., waiting on L1 block confirmations, etc.), applied to the L1 batch-posting transaction. This also means that a client uncomfortable with the trust model of the Sequencer's soft confirmations (phase 2) can simply wait for the Sequencer to post their transaction in a batch (phase 3).
 
@@ -120,7 +120,7 @@ L1 contracts also keep track of the tree of all assertions; i.e., how many stake
 
 - [Assertion Tree Protocol](./assertion-tree.mdx)
 
-#### ~ ~ ~ FINALITY CHECK: STILL THE SAME Ethereum-Equivalent Finality! ~ ~ ~
+#### ~ ~ ~ FINALITY CHECK STILL THE SAME Ethereum-Equivalent Finality! ~ ~ ~
 
 Remember in phase 3 when said that once the L1 has committed to inputs, we can guarantee the L2 output? We meant it! Even during a dispute, Arbitrum nodes continue to execute and active validators continue to make assertions on the valid leaf in the state-tree; nothing that can happen in phase 4 has any effect on the L1-level finality we've already locked in at phase 3.
 
@@ -128,7 +128,7 @@ Remember in phase 3 when said that once the L1 has committed to inputs, we can g
 
 Once any and all disputes have been resolved and sufficient time has passed, our RBlock can be confirmed on L1 (any Ethereum account on L1 can confirm it). Upon confirmation, the Outbox root on L1 gets updated.
 
-#### ~ ~ ~ FINALITY CHECK: L2-to-L1 Messages Executable on L1 ~ ~ ~
+#### ~ ~ ~ FINALITY CHECK L2-to-L1 Messages Executable on L1 ~ ~ ~
 
 If our client's transaction didn't include any L2-to-L1 messages (e.g., withdrawals), phase 5 has no material effect on their transaction. If it did include an L2-to-L1 transaction, it is only after confirmation that the message can be executed in the Outbox on L1.
 

@@ -1,6 +1,6 @@
 ---
 id: "constants"
-title: "Namespace: constants"
+title: "Namespace constants"
 sidebar_label: "constants"
 sidebar_position: 0
 custom_edit_url: null

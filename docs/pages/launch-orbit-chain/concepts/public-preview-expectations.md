@@ -1,5 +1,5 @@
 ---
-title: 'Public preview: What to expect'
+title: 'Public preview What to expect'
 description: 'Orbit chains are currently a public preview capability. This concept document explains what this means, and what to expect from public preview capabilities.'
 author: symbolpunk
 sidebar_position: 3
@@ -39,9 +39,9 @@ Public preview offerings are evolving rapidly, so don't expect the degree of rel
 
 Our product team primarily uses three feedback channels while iterating on public preview capabilities:
 
-1.  **Docs**: Click on the `Request an update` button located in the top-right corner of any document to provide feedback on the docs and/or developer experience. This will lead you to a prefilled Github issue that members of our product team periodically review.
-2.  **Discord**: [Join the Arbitrum Discord](https://discord.gg/arbitrum) to engage with members of the Arbitrum community and product team.
-3.  **Google form**: Complete [this form](http://bit.ly/3yy6EUK) to ask for support.
+1. **Docs**: Click on the `Request an update` button located in the top-right corner of any document to provide feedback on the docs and/or developer experience. This will lead you to a prefilled Github issue that members of our product team periodically review.
+2. **Discord**: [Join the Arbitrum Discord](https://discord.gg/arbitrum) to engage with members of the Arbitrum community and product team.
+3. **Google form**: Complete [this form](http://bit.ly/3yy6EUK) to ask for support.
 
 ### What to expect when providing feedback
 
@@ -49,6 +49,6 @@ Our ability to respond to feedback is determined by our ever-evolving capacity a
 
 _PS, [our small-but-mighty team is hiring](https://jobs.lever.co/offchainlabs)._
 
-### Thank you!
+### Thank you
 
 Thanks for helping us build things that meet your needs! We're excited to engage with OGs and newcomers alike; please don't hesitate to reach out.

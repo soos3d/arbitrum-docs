@@ -1,6 +1,6 @@
 ---
 id: "InboxTools"
-title: "Class: InboxTools"
+title: "Class InboxTools"
 sidebar_label: "InboxTools"
 sidebar_position: 0
 custom_edit_url: null

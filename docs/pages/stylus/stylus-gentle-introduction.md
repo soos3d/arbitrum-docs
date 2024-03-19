@@ -7,7 +7,7 @@ target_audience: 'Developers who want to build on Arbitrum using popular program
 sidebar_position: 1
 ---
 
-# A gentle introduction: Stylus
+# A gentle introduction Stylus
 
 import PublicPreviewBannerPartial from './partials/_stylus-public-preview-banner-partial.md';
 

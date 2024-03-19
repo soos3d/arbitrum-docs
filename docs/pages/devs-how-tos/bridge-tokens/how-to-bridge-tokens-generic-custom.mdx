@@ -1,11 +1,11 @@
 ---
-title: 'Bridge tokens via Arbitrum’s generic-custom gateway'
+title: "Bridge tokens via Arbitrum’s generic-custom gateway"
 description: Learn how to use the generic-custom gateway to bridge tokens programmatically
 user_story: As a developer, I want to understand how to bridge tokens between Ethereum and Arbitrum using the generic-custom gateway
 content_type: how-to
 ---
 
-import PublicPreviewBannerPartial from '../../partials/_public-preview-banner-partial.md';
+import PublicPreviewBannerPartial from "../../partials/_public-preview-banner-partial.md";
 
 <PublicPreviewBannerPartial />
 
@@ -15,7 +15,7 @@ Familiarity with [Arbitrum’s token bridge system](/for-devs/concepts/token-bri
 
 We will go through all steps involved in the process. However, if you want to jump straight to the code, we have created [this script in our tutorials repository](https://github.com/OffchainLabs/arbitrum-tutorials/tree/master/packages/custom-token-bridging) that encapsulates the entire process.
 
-## Step 0: Review the prerequisites
+## Step 0 Review the prerequisites
 
 As stated in the [token bridge conceptual page](/for-devs/concepts/token-bridge/token-bridge-erc20.mdx#the-arbitrum-generic-custom-gateway), there are a few prerequisites to keep in mind while using this method to make a token bridgeable.
 
@@ -36,7 +36,7 @@ Also, the **L2 counterpart of the token**, must conform to the [IArbToken](https
 - It must have`bridgeMint` and `bridgeBurn` methods only callable by the L2CustomGateway contract
 - It must have an `l1Address` view method that returns the address of the token in L1
 
-## Step 1: Create a token and deploy it on L1
+## Step 1 Create a token and deploy it on L1
 
 We‘ll begin the process by creating and deploying on L1 a sample token to bridge. If you already have a token contract on L1, you don’t need to perform this step.
 
@@ -156,10 +156,10 @@ contract L1Token is Ownable, ICustomToken, ERC20 {
 We now deploy that token to L1.
 
 ```tsx
-const { ethers } = require('hardhat');
-const { providers, Wallet } = require('ethers');
-const { getL2Network } = require('@arbitrum/sdk');
-require('dotenv').config();
+const { ethers } = require("hardhat");
+const { providers, Wallet } = require("ethers");
+const { getL2Network } = require("@arbitrum/sdk");
+require("dotenv").config();
 
 const walletPrivateKey = process.env.DEVNET_PRIVKEY;
 const l1Provider = new providers.JsonRpcProvider(process.env.L1RPC);
@@ -183,8 +183,10 @@ const main = async () => {
    * Deploy our custom token smart contract to L1
    * We give the custom token contract the address of l1CustomGateway and l1GatewayRouter as well as the initial supply (premine)
    */
-  console.log('Deploying the test L1Token to L1:');
-  const L1Token = await (await ethers.getContractFactory('L1Token')).connect(l1Wallet);
+  console.log("Deploying the test L1Token to L1:");
+  const L1Token = await (
+    await ethers.getContractFactory("L1Token")
+  ).connect(l1Wallet);
   const l1Token = await L1Token.deploy(l1Gateway, l1Router, 1000);
 
   await l1Token.deployed();
@@ -205,7 +207,7 @@ main()
   });
 ```
 
-## Step 2: Create a token and deploy it on L2
+## Step 2 Create a token and deploy it on L2
 
 We’ll now create and deploy on L2 the counterpart of the token we created on L1.
 
@@ -253,16 +255,17 @@ contract L2Token is ERC20, IArbToken {
 We now deploy that token to L2.
 
 ```tsx
-const { ethers } = require('hardhat');
-const { providers, Wallet } = require('ethers');
-const { getL2Network } = require('@arbitrum/sdk');
-require('dotenv').config();
+const { ethers } = require("hardhat");
+const { providers, Wallet } = require("ethers");
+const { getL2Network } = require("@arbitrum/sdk");
+require("dotenv").config();
 
 const walletPrivateKey = process.env.DEVNET_PRIVKEY;
 const l2Provider = new providers.JsonRpcProvider(process.env.L2RPC);
 const l2Wallet = new Wallet(walletPrivateKey, l2Provider);
 
-const l1TokenAddress = '<address of the l1 token deployed in the previous step>';
+const l1TokenAddress =
+  "<address of the l1 token deployed in the previous step>";
 
 /**
  * For the purpose of our tests, here we deploy an standard ERC20 token (L2Token) to L2
@@ -278,8 +281,10 @@ const main = async () => {
    * Deploy our custom token smart contract to L2
    * We give the custom token contract the address of l2CustomGateway as well as the address of the counterpart L1 token
    */
-  console.log('Deploying the test L2Token to L2:');
-  const L2Token = await (await ethers.getContractFactory('L2Token')).connect(l2Wallet);
+  console.log("Deploying the test L2Token to L2:");
+  const L2Token = await (
+    await ethers.getContractFactory("L2Token")
+  ).connect(l2Wallet);
   const l2Token = await L2Token.deploy(l2Gateway, l1TokenAddress);
 
   await l2Token.deployed();
@@ -294,7 +299,7 @@ main()
   });
 ```
 
-## Step 3: Register the custom token to the generic-custom gateway
+## Step 3 Register the custom token to the generic-custom gateway
 
 Once both our contracts are deployed in their respective chains, it’s time to register the token in the generic-custom gateway.
 
@@ -305,7 +310,7 @@ When using this function two actions will be performed:
 1. Call function `registerTokenToL2` of `L1CustomGateway`. This will change the `l1ToL2Token` internal mapping it holds and will send a retryable ticket to the counterpart `L2CustomGateway` contract in L2, to also set its mapping to the new values.
 2. Call function `setGateway` of `L1GatewayRouter`. This will change the `l1TokenToGateway` internal mapping it holds and will send a retryable ticket to the counterpart `L2GatewayRouter` contract in L2, to also set its mapping to the new values.
 
-To simplify the process, we’ll use Arbitrum’s SDK. We’ll call the method [registerCustomToken](/sdk/assetBridger_erc20Bridger#registercustomtoken) of the [AdminErc20Bridger](/sdk/assetBridger_erc20Bridger#adminerc20bridger) class, which will call the registerTokenOnL2 method of the token passed by parameter.
+To simplify the process, we’ll use Arbitrum’s SDK. We’ll call the method registerCustomToken of the AdminErc20Bridger class, which will call the registerTokenOnL2 method of the token passed by parameter.
 
 ```tsx
 /**
@@ -316,12 +321,12 @@ const registerTokenTx = await adminTokenBridger.registerCustomToken(
   l1CustomToken.address,
   l2CustomToken.address,
   l1Wallet,
-  l2Provider,
+  l2Provider
 );
 
 const registerTokenRec = await registerTokenTx.wait();
 console.log(
-  `Registering token txn confirmed on L1! 🙌 L1 receipt is: ${registerTokenRec.transactionHash}`,
+  `Registering token txn confirmed on L1! 🙌 L1 receipt is: ${registerTokenRec.transactionHash}`
 );
 
 /**
@@ -338,16 +343,20 @@ const l1ToL2Msgs = await registerTokenRec.getL1ToL2Messages(l2Provider);
  * - (2) another to set the L1 token to its L2 token address via the Generic-Custom Gateway
  * Here, We check if both messages are redeemed on L2
  */
-expect(l1ToL2Msgs.length, 'Should be 2 messages.').to.eq(2);
+expect(l1ToL2Msgs.length, "Should be 2 messages.").to.eq(2);
 
 const setTokenTx = await l1ToL2Msgs[0].waitForStatus();
-expect(setTokenTx.status, 'Set token not redeemed.').to.eq(L1ToL2MessageStatus.REDEEMED);
+expect(setTokenTx.status, "Set token not redeemed.").to.eq(
+  L1ToL2MessageStatus.REDEEMED
+);
 
 const setGateways = await l1ToL2Msgs[1].waitForStatus();
-expect(setGateways.status, 'Set gateways not redeemed.').to.eq(L1ToL2MessageStatus.REDEEMED);
+expect(setGateways.status, "Set gateways not redeemed.").to.eq(
+  L1ToL2MessageStatus.REDEEMED
+);
 
 console.log(
-  'Your custom token is now registered on our custom gateway 🥳  Go ahead and make the deposit!',
+  "Your custom token is now registered on our custom gateway 🥳  Go ahead and make the deposit!"
 );
 ```
 

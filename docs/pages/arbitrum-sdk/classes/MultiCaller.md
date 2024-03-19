@@ -1,6 +1,6 @@
 ---
 id: "MultiCaller"
-title: "Class: MultiCaller"
+title: "Class MultiCaller"
 sidebar_label: "MultiCaller"
 sidebar_position: 0
 custom_edit_url: null

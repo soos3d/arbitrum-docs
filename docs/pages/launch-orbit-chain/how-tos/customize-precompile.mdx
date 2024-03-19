@@ -36,7 +36,7 @@ cd nitro
 git submodule update --init --recursive --force
 ```
 
-## Option 1: Add new methods to an existing precompile
+## Option 1 Add new methods to an existing precompile
 
 Using your favorite code editor, open an existing precompile from the [precompiles implementation][precompile_impl_dir_link] directory, `/@nitroPathToPrecompiles@`. We'll use `ArbSys.go` as an example. Open the corresponding Go implementation file (`ArbSys.go`) and add a simple `SayHi` method:
 
@@ -91,7 +91,7 @@ You should see something like this:
 hi
 ```
 
-## Option 2: Create a new precompile
+## Option 2 Create a new precompile
 
 First, navigate to the [precompiles implementation][precompile_impl_dir_link] directory, `/@nitroPathToPrecompiles@`, and create a new precompile implementation file called `ArbHi.go`. We'll define a new method, and we'll give it an address:
 
@@ -164,7 +164,7 @@ You should see something like this:
 hi
 ```
 
-## Option 3: Define a new event
+## Option 3 Define a new event
 
 We'll reuse the `Arbsys` precompile from Option 1 above to demonstrate how to emit a simple `Hi` event from the `SayHi` method in `ArbSys.sol`.
 
@@ -206,7 +206,7 @@ Now navigate to the [precompiles interface][precompile_interface_dir_link] direc
 event Hi(address caller);
 ```
 
-If you want to [index the parameter](https://docs.soliditylang.org/en/latest/contracts.html#events) of the event (if you want to filter by that parameter in the future, for example), just add `indexed` to the Solidity interface:
+If you want to [index the parameter](https://docs.soliditylang.org/en/latest/contracts.html#events) of the event (if you want to filter by that parameter in the future, for example), just add `indexed` to the Solidity interface
 
 ```solidity
 event Hi(address indexed caller);
@@ -267,7 +267,7 @@ Note the `logs` field within the transaction receipt:
       ]
 ```
 
-## Option 4: Customize gas usage for a specific method
+## Option 4 Customize gas usage for a specific method
 
 The above instructions demonstrate how you can define a new precompile function. However, if this new function is simply defined without performing gas collection within the function, your precompile will be vulnerable to Denial-of-Service (DOS) attacks. These attacks exploit the function by flooding it with excessive requests without bearing the computational cost.
 
@@ -395,7 +395,7 @@ Here we can see that the gas cost incurred by the execution of the first transac
 
 To learn more about the gas cost model, see [how to estimate gas](/devs-how-tos/how-to-estimate-gas).
 
-## Option 5: Call and modify state
+## Option 5 Call and modify state
 
 In this example, we'll demonstrate how to _read from_ and _write to_ a precompile contract's [ArbOS state][arbosstate_link].
 
@@ -530,13 +530,6 @@ You should see something like this:
 ```
 
 {/* For clarity in the code, we add here all links to github, using "link references" (First the interfaces, and below the implementations) */}
-
-{/_
-Note that nitro-contracts repository is hardcoded because atm we use the "nitro" repository for referencing precompiles for the current released nitro version (for Arb chains),
-but we use the "nitro-contracts" repo for Orbit chains (next nitro release version will use "nitro-contracts" for all chains though).
-The same goes for the path to precompiles interface.
-We can use the @nitroContractsRepositorySlug@ and @nitroContractsPathToPrecompilesInterface@ variables once we release nitro version 2.1.0 or above.
-_/}
 
 [precompile_impl_dir_link]: https://github.com/OffchainLabs/@nitroRepositorySlug@/blob/@nitroVersionTag@/@nitroPathToPrecompiles@/
 [precompile_interface_dir_link]: https://github.com/OffchainLabs/@nitroContractsRepositorySlug@/blob/@nitroContractsCommit@/@nitroContractsPathToPrecompilesInterface@/

@@ -1,6 +1,6 @@
 ---
 id: "L2ToL1MessageStatus"
-title: "Enumeration: L2ToL1MessageStatus"
+title: "Enumeration L2ToL1MessageStatus"
 sidebar_label: "L2ToL1MessageStatus"
 sidebar_position: 0
 custom_edit_url: null

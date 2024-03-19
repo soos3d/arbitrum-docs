@@ -8,7 +8,7 @@ Here we will describe the mechanics of how the Sequencer typically operates, and
 
 When we talk about “submitting a transaction into an Arbitrum chain,” we’re talking about getting it included into the chain’s core Inbox, represented by the `sequencerInboxAccs` byte array in `Bridge`. Once transactions are included in the core Inbox, their ordering is fixed, execution is fully deterministic, and we can trustlessly treat the resultant state as having L1-level finality (see “Transaction Lifecycle”). The Sequencer’s role (or lack thereof) concerns strictly what happens prior; i.e., how a transaction makes its way into the core Inbox. We’ll break down the possible routes a transaction can take into two scenarios: a well-behaved Sequencer, and a faulty Sequencer.
 
-## Happy/Common Case: Sequencer Is Live and Well-behaved
+## Happy/Common Case Sequencer Is Live and Well-behaved
 
 Here, we start by assuming that the Sequencer is fully operational, and is running with the intent of processing users’ transactions in as safe and timely a manner as possible. The Sequencer can receive a user’s transaction two ways — either directly via an RPC request, or via the underlying L1.
 
@@ -19,7 +19,7 @@ Alternatively, a user can submit their L2 message to the Sequencer by posting it
 
 In sum — in either happy case, the user first delivers their message to the Sequencer, who in turn ensures that it arrives in the core Inbox.
 
-## Unhappy/Uncommon Case: Sequencer Isn’t Doing Its Job
+## Unhappy/Uncommon Case Sequencer Isn’t Doing Its Job
 
 Now let’s suppose the Sequencer, for whatever reason, is entirely failing to carry out its task of submitting messages. A user can still get their transaction included in two steps:
 

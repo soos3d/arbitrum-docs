@@ -1,6 +1,6 @@
 ---
 id: "L1ToL2Message"
-title: "Class: L1ToL2Message"
+title: "Class L1ToL2Message"
 sidebar_label: "L1ToL2Message"
 sidebar_position: 0
 custom_edit_url: null

@@ -1,6 +1,6 @@
 ---
 id: "Erc20Bridger"
-title: "Class: Erc20Bridger"
+title: "Class Erc20Bridger"
 sidebar_label: "Erc20Bridger"
 sidebar_position: 0
 custom_edit_url: null

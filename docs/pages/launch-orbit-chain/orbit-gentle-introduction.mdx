@@ -1,6 +1,6 @@
 ---
-title: 'A gentle introduction: Orbit chains'
-description: 'Launch your own Arbitrum Orbit chain using the Arbitrum Nitro codebase. Build an L2 or an L3 with the ability to customize every aspect of the chain specifically for your needs.'
+title: "A gentle introduction Orbit chains"
+description: "Launch your own Arbitrum Orbit chain using the Arbitrum Nitro codebase. Build an L2 or an L3 with the ability to customize every aspect of the chain specifically for your needs."
 author: symbolpunk
 sme: oliviaJ3388
 target_audience: technical decision-makers, people familiar with web3 who will decide to use Orbit on behalf of their organizations
@@ -9,13 +9,13 @@ sidebar_position: 1
 
 This document is for developers and decision-makers who want to learn more about **Arbitrum Orbit**, a new product offering that lets you create your own Arbitrum <a data-quicklook-from="arbitrum-rollup-protocol">Rollup</a> and <a data-quicklook-from="arbitrum-anytrust-protocol">AnyTrust</a> chains.
 
-If you'd prefer to learn by doing, see the [Orbit quickstart](./orbit-quickstart) for step-by-step instructions that walk you through the process of configuring and launching your own Orbit chain.
+If you'd prefer to learn by doing, see the Orbit quickstart for step-by-step instructions that walk you through the process of configuring and launching your own Orbit chain.
 
-import PublicPreviewBannerPartial from './partials/_orbit-public-preview-banner-partial.md';
+import PublicPreviewBannerPartial from "./partials/_orbit-public-preview-banner-partial.md";
 
 <PublicPreviewBannerPartial />
 
-### In a nutshell:
+### In a nutshell
 
 - Arbitrum Orbit is the **permissionless path** for launching customizable dedicated chains using Arbitrum technology.
 - Orbit Chains can be a <a data-quicklook-from='layer-2-l2'>Layer 2 (L2)</a> chain which settles directly to Ethereum, or a Layer 3 (L3) chain which can settle to any Ethereum L2, such as <a data-quicklook-from='arbitrum-one'>Arbitrum One</a>.
@@ -32,7 +32,7 @@ import {
   Connection,
   NodeDescriptions,
   NodeDescription,
-} from '/src/components/MermaidWithHtml/MermaidWithHtml';
+} from "../../components/MermaidWithHtml/MermaidWithHtml";
 
 <MermaidWithHtml>
   <Nodes>
@@ -48,12 +48,12 @@ import {
   </Nodes>
   <NodeDescriptions>
     <NodeDescription for="1,2,4">
-      <strong>Arbitrum Orbit</strong> is a new product offering that lets you create your own
-      customizable L2 or L3 chain.
+      <strong>Arbitrum Orbit</strong> is a new product offering that lets you
+      create your own customizable L2 or L3 chain.
     </NodeDescription>
     <NodeDescription for="3">
-      L3 Orbit chains can settle to other L2 chains, such as <strong>Arbitrum One</strong>, which
-      settles to Ethereum.
+      L3 Orbit chains can settle to other L2 chains, such as{" "}
+      <strong>Arbitrum One</strong>, which settles to Ethereum.
     </NodeDescription>
     <NodeDescription for="5">
       <strong>Ethereum</strong> is a public Layer 1 (L1) chain.
@@ -142,7 +142,7 @@ L3 Orbit chains that settle to DAO-governed chains like Arbitrum One and Nova ca
 
 ### I'd love to tinker with Orbit! What should I do next?
 
-Visit the [Orbit Quickstart](./orbit-quickstart.md), start tinkering, and let us know how it goes - we're excited to learn and grow with you! 🚀
+Visit the Orbit Quickstart, start tinkering, and let us know how it goes - we're excited to learn and grow with you! 🚀
 
 ### How can I launch an Orbit chain on mainnet?
 

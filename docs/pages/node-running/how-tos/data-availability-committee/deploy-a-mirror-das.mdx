@@ -10,7 +10,7 @@ import PublicPreviewBannerPartial from "../../../partials/_public-preview-banner
 
 <PublicPreviewBannerPartial />
 
-:::warning 
+:::warning
 **Running a regular DAS vs running a mirror DAS**
 
 The main use-case for running a mirror DAS is to complement your setup as a Data Availability Committee (DAC) member. That means that you should run your main DAS first, and then configure the mirror DAS. Refer to _[How to deploy a DAS](./deploy-a-das.mdx)_ if needed.
@@ -48,7 +48,7 @@ A mirror DAS will use the same tool and, thus, the same configuration options as
 
 ## How to deploy a mirror DAS
 
-### Step 0: Prerequisites
+### Step 0 Prerequisites
 
 Gather the following information:
 
@@ -57,16 +57,7 @@ Gather the following information:
 - The SequencerInbox contract address in the parent chain.
 - URL of the list of REST endpoints of other DA servers to configure the REST aggregator.
 
-{/\*
-In terms of hardware requirements, these are the minimum specs that your infrastructure should comply with to run a stable DAS:
-
-- RAM:
-- CPU:
-
-Depending on the storage backend you use for your DAS, you'll need to configure the appropriate infrastructure: for example, an S3 bucket if you choose S3, or a local volume if you choose any of the local backend options. When using a local volume, it is recommended to use …
-\*/}
-
-### Step 1: Set up a persistent volume
+### Step 1 Set up a persistent volume
 
 First, we'll set up a volume to store the DAS database. In k8s, we can use a configuration like this:
 
@@ -84,7 +75,7 @@ spec:
   storageClassName: gp2
 ```
 
-### Step 2: Deploy the mirror DAS
+### Step 2 Deploy the mirror DAS
 
 To run the mirror DAS, we'll use the `daserver` tool and we'll configure the following parameters:
 
@@ -114,29 +105,10 @@ To enable caching, you can use the following parameters:
 
 Finally, for the storage backends you wish to configure, use the following parameters. Toggle between the different options to see all available parameters.
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 import S3Parameters from "./partials/parameters/_s3-parameters.mdx";
 import LocalBadgerDBParameters from "./partials/parameters/_local-badger-db-parameters.mdx";
 import LocalFilesParameters from "./partials/parameters/_local-files-parameters.mdx";
 import IPFSParameters from "./partials/parameters/_ipfs-parameters.mdx";
-
-<div className="dynamic-content-tabs">
-  <Tabs className="tabgroup" defaultValue={null}>
-    <TabItem value="s3-bucket" label="AWS S3 bucket">
-      <S3Parameters />
-    </TabItem>
-    <TabItem value="badger-db" label="Local Badger database">
-      <LocalBadgerDBParameters />
-    </TabItem>
-    <TabItem value="local-files" label="Local files">
-      <LocalFilesParameters />
-    </TabItem>
-    <TabItem value="ipfs" label="IPFS">
-      <IPFSParameters />
-    </TabItem>
-  </Tabs>
-</div>
 
 Here's an example `daserver` command for a mirror DAS that:
 
@@ -256,7 +228,7 @@ A helm chart is available at [ArtifactHUB](https://artifacthub.io/packages/helm/
 
 Once the DAS is running, we can test if everything is working correctly using the following methods.
 
-### Test 1: REST health check
+### Test 1 REST health check
 
 The REST interface enabled in the mirror DAS has a health check on the path `/health` which will return `200` if the underlying storage is working, otherwise `503`.
 

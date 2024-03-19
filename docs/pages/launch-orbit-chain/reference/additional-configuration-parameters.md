@@ -1,5 +1,5 @@
 ---
-title: 'Additional configuration parameters: Orbit chains'
+title: 'Additional configuration parameters Orbit chains'
 sidebar_label: Additional configuration parameters
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: "L1ToL2MessageGasEstimator"
-title: "Class: L1ToL2MessageGasEstimator"
+title: "Class L1ToL2MessageGasEstimator"
 sidebar_label: "L1ToL2MessageGasEstimator"
 sidebar_position: 0
 custom_edit_url: null

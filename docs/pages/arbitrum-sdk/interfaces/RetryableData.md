@@ -1,6 +1,6 @@
 ---
 id: "RetryableData"
-title: "Interface: RetryableData"
+title: "Interface RetryableData"
 sidebar_label: "RetryableData"
 sidebar_position: 0
 custom_edit_url: null

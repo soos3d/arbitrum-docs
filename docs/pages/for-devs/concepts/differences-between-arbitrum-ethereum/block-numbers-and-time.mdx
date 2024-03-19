@@ -20,7 +20,7 @@ Once in the chain's core inbox contract, transactions are processed in order. Ge
 
 In this page we describe what does this mechanism mean for the block numbers and the time assumptions of the transactions submitted to Arbitrum.
 
-## Block numbers: Arbitrum vs. Ethereum
+## Block numbers Arbitrum vs. Ethereum
 
 Arbitrum blocks are assigned their own L2 block numbers, distinct from Ethereum's block numbers.
 
@@ -53,7 +53,7 @@ const txnReceipt = await arbitrumProvider.getTransactionReceipt("0x...");
 */
 ```
 
-The Arbitrum block number can also be retrieved within an Arbitrum contract via [ArbSys](/for-devs/dev-tools-and-resources/precompiles.mdx#arbsys) precompile:
+The Arbitrum block number can also be retrieved within an Arbitrum contract via [ArbSys](/for-devs/dev-tools-and-resources/precompiles.mdx#arbsys) precompile
 
 ```solidity
  ArbSys(100).arbBlockNumber() // returns Arbitrum block number
@@ -71,7 +71,7 @@ _\* **L2 `block.number`:** updated to sync with L1 `block.number` approximately 
 
 _\*\* **Arbitrum block number from RPCs:** note that this can be updated multiple times per L1 block (this lets the sequencer give sub-L1-block-time transaction receipts.)_
 
-### Case study: the Multicall contract
+### Case study the Multicall contract
 
 The Multicall contract offers a great case study for the differences between L1 and L2 block numbers.
 
@@ -83,7 +83,7 @@ By default the `getBlockNumber`, `tryBlockAndAggregate`, and `aggregate` functio
 
 The `getL1BlockNumber` function can be queried if applications need to surface the L1 block number.
 
-## Block timestamps: Arbitrum vs. Ethereum
+## Block timestamps Arbitrum vs. Ethereum
 
 Block timestamps on Arbitrum are not linked to the timestamp of the L1 block. They are updated every L2 block based on the sequencer's clock. These timestamps must follow these two rules:
 

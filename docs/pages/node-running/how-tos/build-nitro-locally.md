@@ -20,20 +20,20 @@ This how-to assumes that you're running one of the following operating systems:
 
 ## Build a Docker image
 
-### Step 1. Configure [Docker](https://docs.docker.com/engine/install)
+### Step 1. Configure [Docker](https//docs.docker.com/engine/install)
 
-#### For [Debian](https://docs.docker.com/engine/install/debian)/[Ubuntu](https://docs.docker.com/engine/install/ubuntu)
+#### For [Debian](https://docs.docker.com/engine/install/debian)/[Ubuntu](https//docs.docker.com/engine/install/ubuntu)
 
 ```bash
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-# Add Docker's official GPG key:
+# Add Docker's official GPG key
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-# Add the repository to Apt sources:
+# Add the repository to Apt sources
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
@@ -43,7 +43,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo service docker start
 ```
 
-#### For [MacOS](https://docs.docker.com/desktop/install/mac-install/)
+#### For [MacOS](https//docs.docker.com/desktop/install/mac-install/)
 
 Depending on whether your Mac has an Intel processor or Apple silicon, download the corresponding disk image from [Docker](https://docs.docker.com/desktop/install/mac-install/), and move it into your Applications folder.
 
@@ -109,7 +109,7 @@ sudo mkdir -p /usr/local/bin
 sudo ln -s  /opt/homebrew/opt/llvm/bin/wasm-ld /usr/local/bin/wasm-ld
 ```
 
-### Step 5. Configure node [16.19](https://github.com/nvm-sh/nvm)
+### Step 5. Configure node [16.19](https//github.com/nvm-sh/nvm)
 
 #### For Debian/Ubuntu
 
@@ -130,7 +130,7 @@ nvm install 16.19
 nvm use 16.19
 ```
 
-### Step 6. Configure Rust [1.72.1](https://www.rust-lang.org/tools/install)
+### Step 6. Configure Rust [1.72.1](https//www.rust-lang.org/tools/install)
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -142,7 +142,7 @@ rustup target add wasm32-wasi --toolchain 1.72.1
 cargo install cbindgen
 ```
 
-### Step 7. Configure Go [1.20](https://github.com/moovweb/gvm)
+### Step 7. Configure Go [1.20](https//github.com/moovweb/gvm)
 
 #### Install Bison
 

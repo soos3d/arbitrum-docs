@@ -54,13 +54,13 @@ Similarly, Arbitrum to Ethereum transfers are initiated via the router contract 
 
 For any given gateway pairing, we require that calls be initiated through the corresponding router (`L1GatewayRouter` or `L2GatewayRouter`), and that the gateways conform to the [TokenGateway](https://github.com/OffchainLabs/token-bridge-contracts/blob/main/contracts/tokenbridge/libraries/gateway/TokenGateway.sol) interfaces; the `TokenGateway` interfaces should be flexible and extensible enough to support any bridging functionality a particular token may require.
 
-## The standard ERC-20 gateway {#default-standard-bridging}
+## The standard ERC-20 gateway
 
 By default, any ERC-20 token on L1 that isn't registered to a gateway can be permissionlessly bridged through the `StandardERC20Gateway`.
 
 You can use the [bridge UI](https://bridge.arbitrum.io/) or follow the instructions in [How to bridge tokens via Arbitrum’s standard ERC-20 gateway](/devs-how-tos/bridge-tokens/how-to-bridge-tokens-standard.mdx) to bridge a token to L2 via this gateway.
 
-### Example: Standard Arb-ERC20 deposit and withdraw
+### Example Standard Arb-ERC20 deposit and withdraw
 
 To help illustrate what this all looks like in practice, let's go through the steps of what depositing and withdrawing `SomeERC20Token` via our standard ERC-20 gateway looks like. Here, we're assuming that `SomeERC20Token` has already been registered in the `L1GatewayRouter` to use the standard ERC-20 gateway.
 

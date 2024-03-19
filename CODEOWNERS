@@ -1,5 +1,5 @@
 # Code owners are automatically requested for review when someone opens a pull request that modifies code that they own.
-# Learn more here: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# Learn more here: https//docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
 # recursively assign all markdown files to @foo @bar
 **/*.md @symbolpunk @tucksondev @mahsamoosavi @anegg0 @hkalodner

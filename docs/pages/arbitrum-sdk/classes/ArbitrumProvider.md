@@ -1,6 +1,6 @@
 ---
 id: "ArbitrumProvider"
-title: "Class: ArbitrumProvider"
+title: "Class ArbitrumProvider"
 sidebar_label: "ArbitrumProvider"
 sidebar_position: 0
 custom_edit_url: null

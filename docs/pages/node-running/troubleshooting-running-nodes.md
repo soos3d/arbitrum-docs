@@ -1,12 +1,12 @@
 ---
-title: 'Troubleshooting: Run a node'
+title: 'Troubleshooting Run a node'
 author: symbolpunk
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Troubleshooting: Run a node
+# Troubleshooting Run a node
 
 The guidance displayed on this page will change based on your selected configuration:
 
@@ -23,7 +23,7 @@ At the end of this troubleshooting guide, you'll find a "Generate troubleshootin
 
 :::
 
-### Step 1: Try the troubleshooting checklist
+### Step 1 Try the troubleshooting checklist
 
 If you're running into unexpected outputs or errors, the following checklist may help you independently resolve your issue.
 
@@ -157,7 +157,7 @@ If you're running into unexpected outputs or errors, the following checklist may
   </div>
 </div>
 
-### Step 2: Look for your scenario
+### Step 2 Look for your scenario
 
 Common troubleshooting scenarios and solutions are detailed below.
 
@@ -246,7 +246,7 @@ import FeedRelayTroubleshootingPartial from '@site/../arbitrum-docs/node-running
 <FeedRelayTroubleshootingPartial />
 */}
 
-### Step 3: Generate a troubleshooting report
+### Step 3 Generate a troubleshooting report
 
 1. Complete the above troubleshooting checklist.
 2. Fill in the below form.

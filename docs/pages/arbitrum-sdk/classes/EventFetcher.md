@@ -1,6 +1,6 @@
 ---
 id: "EventFetcher"
-title: "Class: EventFetcher"
+title: "Class EventFetcher"
 sidebar_label: "EventFetcher"
 sidebar_position: 0
 custom_edit_url: null

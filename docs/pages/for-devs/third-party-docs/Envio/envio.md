@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Blazing-fast indexing and data analytics using Envio'
+title: 'Quickstart Blazing-fast indexing and data analytics using Envio'
 description: 'Learn how to create an API for your smart contracts in less than 3 minutes and index Arbitrum data 100x faster than RPC'
 author: sven-muller
 sme: sven-muller

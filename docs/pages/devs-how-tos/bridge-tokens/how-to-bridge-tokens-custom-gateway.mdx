@@ -9,7 +9,7 @@ import PublicPreviewBannerPartial from "../../partials/_public-preview-banner-pa
 
 <PublicPreviewBannerPartial />
 
-:::warning 
+:::warning
 **Do you really need a custom gateway?**
 
 Before starting to implement and deploy a custom gateway, it is strongly encouraged to analyze the current solutions that Arbitrum’s token bridge provides: the [standard gateway](/devs-how-tos/bridge-tokens/how-to-bridge-tokens-standard.mdx) and the [generic-custom gateway](/devs-how-tos/bridge-tokens/how-to-bridge-tokens-generic-custom.mdx). These solutions provide enough functionality to solve the majority of bridging needs from projects. And if you are in doubt about your current approach, you can always ask for assistance on our [Discord server](https://discord.gg/arbitrum).
@@ -22,7 +22,7 @@ Familiarity with [Arbitrum’s token bridge system](/for-devs/concepts/token-bri
 
 We will go through all steps involved in the process. However, if you want to jump straight to the code, we have created [this script in our tutorials repository](https://github.com/OffchainLabs/arbitrum-tutorials/tree/master/packages/custom-gateway-bridging) that encapsulates the entire process.
 
-## Step 0: Review the prerequisites (a.k.a. do I really need a custom gateway?)
+## Step 0 Review the prerequisites (a.k.a. do I really need a custom gateway?)
 
 Before starting to implement and deploy a custom gateway, it is strongly encouraged to analyze the current solutions that Arbitrum’s token bridge provides: the [standard gateway](/devs-how-tos/bridge-tokens/how-to-bridge-tokens-standard.mdx) and the [generic-custom gateway](/devs-how-tos/bridge-tokens/how-to-bridge-tokens-generic-custom.mdx). These solutions provide enough functionality to solve the majority of bridging needs from projects. And if you are in doubt about your current approach, you can always ask for assistance on our [Discord server](https://discord.gg/arbitrum).
 
@@ -43,15 +43,15 @@ On the other hand, the **L2 counterpart of the gateway**, must conform to the [I
 - A method `outboundTransfer`, to handle external calls, and forwarded calls from `L2GatewayRouter.outboundTransfer`.
 - A method `finalizeInboundTransfer`, to handle messages coming ONLY from L1’s gateway.
 - Two methods `calculateL2TokenAddress` and `getOutboundCalldata` to handle other bridging operations.
-- Methods to send cross-chain messages through the [ArbSys precompile](/for-devs/dev-tools-and-resources/precompiles.mdx#arbsys). An example implementation can be found in `sendTxToL1` on [L2ArbitrumMessenger](https://github.com/OffchainLabs/token-bridge-contracts/blob/main/contracts/tokenbridge/arbitrum/L2ArbitrumMessenger.sol).
+- Methods to send cross-chain messages through the [ArbSys precompile](/for-devs/dev-tools-and-resources/precompiles.mdx#arbsys). An example implementation can be found in `sendTxToL1` on [L2ArbitrumMessenger](https//github.com/OffchainLabs/token-bridge-contracts/blob/main/contracts/tokenbridge/arbitrum/L2ArbitrumMessenger.sol).
 
 ### What about my custom tokens?
 
 If you are deploying custom gateways, you will probably want to support your custom tokens on L1 and L2 too. They also have several requirements they must comply with. You can find more information about it in [How to bridge tokens via Arbitrum’s generic-custom gateway](/devs-how-tos/bridge-tokens/how-to-bridge-tokens-generic-custom.mdx).
 
-## Step 1: Create a gateway and deploy it on L1
+## Step 1 Create a gateway and deploy it on L1
 
-:::warning 
+:::warning
 **This code is for testing purposes**
 
 The code contained within the following sections is meant for testing purposes only and does not guarantee any level of security. It has not undergone any formal audit or security analysis, so it is not ready for production use. Please exercise caution and due diligence while using this code in any environment.
@@ -420,7 +420,7 @@ main()
   });
 ```
 
-## Step 2: Create a gateway and deploy it on L2
+## Step 2 Create a gateway and deploy it on L2
 
 We’ll now create the counterpart of the gateway we created on L1 and deploy it on L2. A good example of a custom gateway on L2 is [Arbitrum’s generic-custom gateway on L2](https://github.com/OffchainLabs/token-bridge-contracts/blob/main/contracts/tokenbridge/arbitrum/gateway/L2CustomGateway.sol).
 
@@ -745,13 +745,13 @@ main()
   });
 ```
 
-## Step 3: Deploy the custom tokens on L1 and L2
+## Step 3 Deploy the custom tokens on L1 and L2
 
 This step will depend on your setup. In this case, as our simplified gateway supports only one token, we will deploy those on L1 and L2 to be able to call the `setTokenBridgeInformation` method on both gateways afterwards.
 
 We won’t go through the process of deploying custom tokens in this How-to, but you can see a detailed explanation of the steps to take in the page [How to bridge tokens via Arbitrum’s generic-custom gateway](/devs-how-tos/bridge-tokens/how-to-bridge-tokens-generic-custom.mdx)
 
-## Step 4: Configure your custom tokens on your gateways
+## Step 4 Configure your custom tokens on your gateways
 
 This step will also depend on your setup. In this case, our simplified gateway requires method `setTokenBridgeInformation` to be called on both gateways to set the addresses of the counterpart gateway and both custom tokens.
 
@@ -787,7 +787,7 @@ console.log(
 );
 ```
 
-## Step 5: Register the custom token to your custom gateway
+## Step 5 Register the custom token to your custom gateway
 
 Once all contracts are deployed on their respective chains, and they all have the information of the gateways and tokens, it’s time to register the token in your custom gateway.
 
@@ -797,7 +797,7 @@ In this case, when using this function only one action will be performed:
 
 1. Call function `setGateway` of `L1GatewayRouter`. This will change the `l1TokenToGateway` internal mapping it holds and will send a retryable ticket to the counterpart `L2GatewayRouter` contract in L2, to also set its mapping to the new values.
 
-To simplify the process, we’ll use Arbitrum’s SDK and call the method [registerCustomToken](/sdk/assetBridger_erc20Bridger#registercustomtoken) of the [AdminErc20Bridger](/sdk/assetBridger_erc20Bridger#adminerc20bridger) class, which will call the registerTokenOnL2 method of the token passed by parameter.
+To simplify the process, we’ll use Arbitrum’s SDK and call the method [registerCustomToken](/) of the [AdminErc20Bridger](/) class, which will call the registerTokenOnL2 method of the token passed by parameter.
 
 ```tsx
 /**

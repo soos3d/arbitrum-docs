@@ -1,4 +1,4 @@
-# Namespace: utils
+# Namespace utils
 
 ## Functions
 

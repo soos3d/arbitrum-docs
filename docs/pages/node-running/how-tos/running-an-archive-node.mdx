@@ -53,8 +53,8 @@ The minimum storage requirements will change over time as the Nitro chains grow 
 
 ### Review and configure ports
 
-{/_ todo: explain why these ports are important and what action needs to be taken - do rules need to be configured? \*/}
-{/_ todo: format into a table \*/}
+{/* todo: explain why these ports are important and what action needs to be taken - do rules need to be configured? \ */}
+{/* todo: format into a table \ */}
 
 - RPC: `8547`
 - Sequencer Feed: `9642`
@@ -72,12 +72,10 @@ The minimum storage requirements will change over time as the Nitro chains grow 
 
 ### Run the Docker image(s)
 
-{/_ this is the procedure part, so we can focus on steps to take, and move "conceptual information" into a dedicated concept doc \*/}
-{/_ Arbitrum One has been upgraded to Nitro, the latest Arbitrum tech stack; "Arbitrum Classic" is our term for the old, pre-Nitro tech stack. The Nitro node databases have the raw data of all blocks, including pre-Nitro blocks. However, Nitro nodes cannot execute anything on pre-Nitro blocks. Arbitrum Nova started as a Nitro chain, so has no classic blocks. \*/}
+{/* this is the procedure part, so we can focus on steps to take, and move "conceptual information" into a dedicated concept doc \ */}
+{/* Arbitrum One has been upgraded to Nitro, the latest Arbitrum tech stack; "Arbitrum Classic" is our term for the old, pre-Nitro tech stack. The Nitro node databases have the raw data of all blocks, including pre-Nitro blocks. However, Nitro nodes cannot execute anything on pre-Nitro blocks. Arbitrum Nova started as a Nitro chain, so has no classic blocks. \ */}
 
 When running a Docker image, an external volume should be mounted to persist the database across restarts. The mount point should be `/home/user/.arbitrum/mainnet`.
-
-{/\* todo: does the user need to do anything to configure the mount point, or is this handled by the below docker commands? \*/}
 
 To run both Arbitrum Nitro and/or Arbitrum Classic in archive mode, follow one or more of the below examples:
 
@@ -108,8 +106,6 @@ chmod -fR 777 /some/local/dir/arbitrum-mainnet
 ### Optional parameters
 
 Both Nitro and Classic have multiple other parameters that can be used to configure your node. For a full comprehensive list of the available parameters, use the flag `--help`.
-
-{/\* todo: FAQ \*/}
 
 ### Troubleshooting
 

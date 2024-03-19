@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: PARSIQ (blockchain data API & SDK)'
+title: 'Quickstart PARSIQ (blockchain data API & SDK)'
 description: 'Learn how to use PARSIQ API and SDK to get Arbitrum data'
 author: Ivan-Ivanitskiy
 sme: Ivan-Ivanitskiy

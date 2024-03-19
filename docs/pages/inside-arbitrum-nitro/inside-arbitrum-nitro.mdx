@@ -66,7 +66,7 @@ All of the technical detail in this document is connected to this diagram. To ge
 - How are ETH and tokens transferred into and out of Arbitrum chains, and how are they managed while on the chain?
 - How can I run my own Arbitrum node or validator?
 
-## Nitro's Design: The Four Big Ideas
+## Nitro's Design The Four Big Ideas
 
 The essence of Nitro, and its key innovations, lie in four big ideas. We'll list them here with a very quick summary of each, then we'll unpack them in more detail in later sections.
 
@@ -263,14 +263,14 @@ graph RL
     Unconfirmed
   end
 
-  classDef confirmed fill:#47b860,stroke:#37914c,stroke-width:2px,color:#fff
+  classDef confirmed fill:#47b860,stroke:#37914c,stroke-width:2px,color#fff
   class 94,93,92,91,90,x,Confirmed confirmed
 
 
-  classDef unconfirmed fill:#2aa1f0,stroke:#1c86ca,stroke-width:2px,color:#fff
+  classDef unconfirmed fill:#2aa1f0,stroke:#1c86ca,stroke-width:2px,color#fff
   class 98,97,96,95,Unconfirmed unconfirmed
 
-  classDef note fill:#F1F5F6,stroke:#dbdede,stroke-width:1px,color:#000
+  classDef note fill:#F1F5F6,stroke:#dbdede,stroke-width:1px,color#000
   class l,f note
 ```
 
@@ -302,16 +302,16 @@ graph RL
   105-->104-->103
   110-->109-->103-->102-->100-->x[...]
 
-  classDef confirmed fill:#47b860,stroke:#37914c,stroke-width:2px,color:#fff
+  classDef confirmed fill:#47b860,stroke:#37914c,stroke-width:2px,color#fff
   class 100,102,103,x,Confirmed confirmed
 
-  classDef rejected fill:#fdaa07,stroke:#fd8607,stroke-width:2px,color:#fff
+  classDef rejected fill:#fdaa07,stroke:#fd8607,stroke-width:2px,color#fff
   class 101,104,105,Rejected rejected
 
-  classDef unconfirmed fill:#2aa1f0,stroke:#1c86ca,stroke-width:2px,color:#fff
+  classDef unconfirmed fill:#2aa1f0,stroke:#1c86ca,stroke-width:2px,color#fff
   class 106,107,108,109,110,111,Unconfirmed unconfirmed
 
-  classDef note fill:#F1F5F6,stroke:#dbdede,stroke-width:1px,color:#000
+  classDef note fill:#F1F5F6,stroke:#dbdede,stroke-width:1px,color#000
   class l,f note
 
 ```
@@ -394,7 +394,7 @@ The game will operate in two phases: dissection, followed by one-step proof. Dis
 
 We’ll describe the dissection part of the protocol twice. First, we’ll give a simplified version which is easier to understand but less efficient. Then we’ll describe how the real version differs from the simplified one.
 
-### Dissection Protocol: Simplified Version
+### Dissection Protocol Simplified Version
 
 Alice is defending the claim that starting with the state in the predecessor RBlock, the state of the Virtual Machine can advance to the state specified in RBlock A. Essentially she is claiming that the Virtual Machine can execute N instructions, and that that execution will consume M inbox messages and transform the hash of outputs from H’ to H.
 

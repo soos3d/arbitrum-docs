@@ -30,7 +30,7 @@ You will be interacting with two main contracts:
 - **Supra Deposit Contract:** To whitelist smart contracts under the registered wallet address, pre-pay/top up the callback gas fee deposit maintained with Supra.
 - **Supra Router Contract:** To request and receive random numbers.
 
-## Step 1: Create the Supra router contract interface​
+## Step 1 Create the Supra router contract interface​
 
 Add the following code to the requester contract i.e, the contract which uses VRF as a service. You can also add the code in a separate interface and inherit the interface in the requester contract.
 
@@ -43,7 +43,7 @@ interface ISupraRouterContract {
 
 This interface will help the requester contract interact with the Supra router contract and through which the requester contract can use the VRF service.
 
-## Step 2: Configure the Supra router contract address​
+## Step 2 Configure the Supra router contract address​
 
 Contracts that need random numbers should utilize the Supra router contract. In order to do that, they need to create an interface and bind it to the on-chain address of the Supra router contract.
 
@@ -57,7 +57,7 @@ contract ExampleContract {
 }
 ```
 
-## Step 3: Use the VRF service and request a random number​
+## Step 3 Use the VRF service and request a random number​
 
 In this step, we will use the “generateRequest” function of the Supra Router Contract to create a request for random numbers. There are two modes for the "generateRequest" function. The only difference between them is that you can optionally provide a client-side input, which will also be part of the payload being threshold signed to provide randomness.
 
@@ -70,7 +70,7 @@ Supra's VRF process requires splitting the contract logic into two functions.
 The request function - the signature of this function is up to the developer
 The callback function - the signature must be of the form “uint256 nonce, uint256[] calldata rngList”
 
-```
+```ts
 function exampleRNG() external {
      //Function validation and logic
      // requesting 10 random numbers
@@ -91,14 +91,14 @@ function exampleRNG() external {
 
 Inside the callback function where the requester contract wants the random number (in this example the callback function is exampleCallback), the requester contract will have to add the validation such that only the Supra router contract can call the function. The validation is necessary to protect against malicious contracts/users executing the callback with fake data. For example, if the callback function is pickWinner in the requester contract, the snippet can be as follows.
 
-```
+```ts
 function exampleCallback(uint256 _nonce ,uint256[] _rngList) external {
     require(msg.sender == address(SupraRouter));
     // Following the required logic of the function
  }
 ```
 
-## Step 5 : Whitelist your requester contract with Supra deposit contract and deposit funds​
+## Step 5 Whitelist your requester contract with Supra deposit contract and deposit funds​
 
 It is important to note that your wallet address must be registered with Supra before this step. If that is completed, then you need to whitelist your requester smart contract under your wallet address and deposit funds to be paid for your call back transactions gas fees.
 The simplest way to interact with the deposit contract will be through Remix IDE.

@@ -1,6 +1,6 @@
 ---
 id: "Address"
-title: "Class: Address"
+title: "Class Address"
 sidebar_label: "Address"
 sidebar_position: 0
 custom_edit_url: null

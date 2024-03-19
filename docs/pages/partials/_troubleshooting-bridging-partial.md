@@ -1,11 +1,11 @@
 ### How do I move assets between One and Nova? {#how-do-i-move-assets-between-one-and-nova}
+
 <p>Both Arbitrum One and Arbitrum Nova run as layers on top of Ethereum. Thus, you can always move assets between the two chains in two steps by going "through" Ethereum. In other words: withdraw your assets from Arbitrum One to Ethereum and then deposit them onto Nova, or conversely, withdraw your assets from Nova on to Ethereum and then deposit them on to Arbitrum One. These steps can all be done at <a href="https://bridge.arbitrum.io/">https://bridge.arbitrum.io/</a>.</p>
 
 <p></p>
 
-
-
 ### What fees do I have to pay when bridging funds from L1 to L2? {#what-fees-do-i-have-to-pay-when-bridging-funds-from-l1-to-l2}
+
 <p>When bridging over tokens from L1 to L2, you will have to sign one or two transactions with their corresponding fees:</p>
 
 <ol><li>If you are bridging a token for the first time, you'll sign one <strong>approval transaction</strong>.</li>
@@ -21,9 +21,8 @@
 
 <p></p>
 
-
-
 ### How long does it take before I receive my funds when I initiate withdrawal from Arbitrum chains (One and Nova)? {#how-long-does-it-take-before-i-receive-my-funds-when-i-initiate-withdrawal-from-arbitrum-chains-one-and-nova}
+
 <p>Using the official Arbitrum Bridge, the process will typically take <em>roughly</em> one week. However, some users opt to use third party fast bridges, which often bypass this delay (remember that third party bridges are created by third parties, so please DYOR!).</p>
 
 <p>There's some variability in the exact wall-clock time of the dispute window, plus there's some expected additional "padding" time on both ends (no more than about an hour, typically).</p>
@@ -38,28 +37,22 @@
 </ol>
 <p>Additionally, in the rare and unlikely event of a dispute, this delay period will be extended for the dispute to resolve.</p>
 
-
-
 ### Is there a way to cancel a withdrawal from Arbitrum? {#is-there-a-way-to-cancel-a-withdrawal-from-arbitrum}
+
 <p>There is no way to cancel a withdrawal that has been already initiated. However, you can claim your funds on L1 and deposit them again on L2 once the <a href="https://developer.arbitrum.io/learn-more/faq#why-was-one-week-chosen-for-arbitrum-ones-dispute-window">withdrawal period</a> is past.</p>
 
 <p></p>
 
-
-
 ### Can I use a smart contract wallet in the bridge? {#can-i-use-a-smart-contract-wallet-in-the-bridge}
+
 <p>Support for Smart Contract Wallets is currently limited to token depositing and withdrawal. Keep in mind that when withdrawing funds, you won't be able to claim them on L1 using the <a href="https://bridge.arbitrum.io/">bridge</a> (unless you also control that address on L1). In that case, you can use the <a href="https://retryable-dashboard.arbitrum.io/tx">cross-chain dashboard</a> to claim your funds on L1.</p>
 
 <p>ETH deposits and withdrawals using a Smart Contract Wallet are currently not supported, but will soon be available.</p>
 
 <p></p>
 
-
-
 ### How can I claim withdrawn funds if I don't control on L1 the address that initiated the transaction on L2? {#how-can-i-claim-withdrawn-funds-if-i-dont-control-on-l1-the-address-that-initiated-the-transaction-on-l2}
-<p>Once the <a href="https://developer.arbitrum.io/learn-more/faq#why-was-one-week-chosen-for-arbitrum-ones-dispute-window">withdrawal period</a> is past, you can use the <a href="https://retryable-dashboard.arbitrum.io/tx">cross-chain dashboard</a> to execute the message on L1. Paste the transaction hash that initiated the withdrawal on L2, and follow the process described in the dashboard.</p>
+
+<p>Once the <a href="https://developer.arbitrum.io/learn-more/faq#why-was-one-week-chosen-for-arbitrum-ones-dispute-window">withdrawal period</a> is past, you can use the <a href="https//retryable-dashboard.arbitrum.io/tx">cross-chain dashboard</a> to execute the message on L1. Paste the transaction hash that initiated the withdrawal on L2, and follow the process described in the dashboard.</p>
 
 <p></p>
-
-
-

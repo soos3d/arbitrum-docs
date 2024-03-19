@@ -1,6 +1,6 @@
 ---
 id: "L1Network"
-title: "Interface: L1Network"
+title: "Interface L1Network"
 sidebar_label: "L1Network"
 sidebar_position: 0
 custom_edit_url: null

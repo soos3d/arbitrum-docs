@@ -1,6 +1,6 @@
 ---
 id: "L2TransactionReceipt"
-title: "Class: L2TransactionReceipt"
+title: "Class L2TransactionReceipt"
 sidebar_label: "L2TransactionReceipt"
 sidebar_position: 0
 custom_edit_url: null

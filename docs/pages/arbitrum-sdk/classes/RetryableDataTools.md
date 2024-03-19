@@ -1,6 +1,6 @@
 ---
 id: "RetryableDataTools"
-title: "Class: RetryableDataTools"
+title: "Class RetryableDataTools"
 sidebar_label: "RetryableDataTools"
 sidebar_position: 0
 custom_edit_url: null

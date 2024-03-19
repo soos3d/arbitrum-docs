@@ -1,6 +1,6 @@
 ---
 id: "L1ContractTransaction"
-title: "Interface: L1ContractTransaction<TReceipt>"
+title: "Interface L1ContractTransaction<TReceipt>"
 sidebar_label: "L1ContractTransaction"
 sidebar_position: 0
 custom_edit_url: null

@@ -327,7 +327,7 @@ If enabled, the Stylus SDK will flush the storage cache in between reentrant cal
 
 The [`#[entrypoint]`][entrypoint] macro will automatically implement the [`TopLevelStorage`][TopLevelStorage] trait for the annotated `struct`. The single type implementing [`TopLevelStorage`][TopLevelStorage] is special in that mutable access to it represents mutable access to the entire program’s state. This idea will become important when discussing calls to other programs in later sections.
 
-### Inheritance, `#[inherit]`, and `#[borrow]`.
+### Inheritance, `#[inherit]`, and `#[borrow]`
 
 Composition in Rust follows that of Solidity. Types that implement [`Router`][Router], the trait that [`#[external]`][external] provides, can be connected via inheritance.
 
@@ -352,7 +352,7 @@ Because `Token` inherits `Erc20` in the above, if `Token` has the [`#[entrypoint
 
 Note that because methods are checked in that order, if both implement the same method, the one in `Token` will override the one in `Erc20`, which won’t be callable. This allows for patterns where the developer imports a crate implementing a standard, like the ERC 20, and then adds or overrides just the methods they want to without modifying the imported `Erc20` type.
 
-Inheritance can also be chained. `#[inherit(Erc20, Erc721)]` will inherit both `Erc20` and `Erc721`, checking for methods in that order. `Erc20` and `Erc721` may also inherit other types themselves. Method resolution finds the first matching method by [Depth First Search](https://en.wikipedia.org/wiki/Depth-first_search).
+Inheritance can also be chained. `#[inherit(Erc20, Erc721)]` will inherit both `Erc20` and `Erc721`, checking for methods in that order. `Erc20` and `Erc721` may also inherit other types themselves. Method resolution finds the first matching method by [Depth First Search](https//en.wikipedia.org/wiki/Depth-first_search).
 
 Note that for the above to work, `Token` must implement [`Borrow<Erc20>`][Borrow]. You can implement this yourself, but for simplicity, [`#[solidity_storage]`][solidity_storage] and [`sol_storage!`][sol_storage] provide a `#[borrow]` annotation.
 
@@ -616,11 +616,9 @@ let callvalue = msg::value();
 [SimpleStorageType]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/trait.SimpleStorageType.html
 [TopLevelStorage]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/trait.TopLevelStorage.html
 [Erase]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/trait.Erase.html
-[erase]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/trait.Erase.html#tymethod.erase
 [StorageCache]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/struct.StorageCache.html
 [StorageCache_flush]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/struct.StorageCache.html#method.flush
 [StorageCache_clear]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/struct.StorageCache.html#method.clear
-[EagerStorage]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/struct.EagerStorage.html
 [StorageBool]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/struct.StorageBool.html
 [StorageAddress]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/struct.StorageAddress.html
 [StorageUint]: https://docs.rs/stylus-sdk/latest/stylus_sdk/storage/struct.StorageUint.html

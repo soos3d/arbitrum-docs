@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Build a decentralized app (Solidity)'
+title: 'Quickstart Build a decentralized app (Solidity)'
 description: This quickstart walks you through the process of converting a Javascript vending machine's business logic into a Solidity smart contract. We'll then deploy the smart contract to a local Hardhat network, then Arbitrum Sepolia testnet, and finally Arbitrum One mainnet.
 author: symbolpunk
 user_story: As a web2 developer, I want to onboard into Arbitrum by building and deploying my first smart contract.
@@ -116,7 +116,7 @@ Let's decentralize our vending machine's business logic and data by porting the 
 
 ### Configure your project directory
 
-Create a `decentralized-cupcakes` directory for your project and install [hardhat](https://hardhat.org/hardhat-runner/docs/getting-started#overview) using VS Code's integrated terminal:
+Create a `decentralized-cupcakes` directory for your project and install [hardhat](https://hardhat.org/hardhat-runner/docs/getting-started#overview) using VS Code's integrated terminal
 
 ```
 mkdir decentralized-cupcakes
@@ -245,7 +245,7 @@ You should see something along the lines of `Started HTTP and WebSocket JSON-RPC
 
 ```
 ...
-Account #0: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 (10000 ETH)
+Account #0 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 (10000 ETH)
 Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 ...
 ```
@@ -525,7 +525,7 @@ If you have any questions or feedback, reach out to us on [Discord](https://disc
 [^3]: There are multiple types of Ethereum nodes. The ones that earn ETH for processing and validating transactions are called _validators_. See [Nodes and Networks](https://docs.prylabs.network/docs/concepts/nodes-networks) for a beginner-friendly introduction to Ethereum's node types.
 [^4]: When our `VendingMachine` contract is deployed to Ethereum, it'll be hosted by Ethereum's decentralized network of nodes. Generally speaking, we won't be able to modify the contract's code after it's deployed.
 [^5]: To learn more about how Ethereum wallets work, see [Ethereum.org's introduction to Ethereum wallets](https://ethereum.org/en/wallets/).
-[^6]: Visit the [Gentle Introduction to Arbitrum](../intro/intro.md) for a beginner-friendly introduction to Arbitrum's rollup protocol.
+[^6]: Visit the Gentle Introduction to Arbitrum for a beginner-friendly introduction to Arbitrum's rollup protocol.
 
 {/* TODOs
 

@@ -1,6 +1,6 @@
 ---
 id: "EthBridger"
-title: "Class: EthBridger"
+title: "Class EthBridger"
 sidebar_label: "EthBridger"
 sidebar_position: 0
 custom_edit_url: null

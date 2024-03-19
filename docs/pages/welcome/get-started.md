@@ -16,9 +16,9 @@ The Arbitrum suite includes the protocols, chains, services, and SDKs that power
 
 | Component                                                         | Description                                                                                         |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [Arbitrum Rollup](/inside-arbitrum-nitro)                         | A **protocol** for scaling Ethereum smart contracts.                                                |
+| [Arbitrum Rollup](/)                         | A **protocol** for scaling Ethereum smart contracts.                                                |
 | [Arbitrum AnyTrust](/inside-anytrust)                             | A **protocol** for scaling Ethereum smart contracts even further, with a mild trust assumption.     |
-| [Arbitrum Nitro](/inside-arbitrum-nitro)                          | The node **software** that codifies the Rollup and AnyTrust protocols.                              |
+| [Arbitrum Nitro](/)                          | The node **software** that codifies the Rollup and AnyTrust protocols.                              |
 | [Arbitrum nodes](/node-running/how-tos/running-a-full-node)       | **Machines** that run Nitro in order to service and/or interact with an Arbitrum chain.             |
 | [Arbitrum One](https://portal.arbitrum.io/?chains=arbitrum-one)   | A public Rollup **chain**.                                                                          |
 | [Arbitrum Nova](https://portal.arbitrum.io/?chains=arbitrum-nova) | A public AnyTrust **chain**.                                                                        |
@@ -68,7 +68,7 @@ The Arbitrum suite includes the protocols, chains, services, and SDKs that power
 
 | Resource                                                                                           | Description                                       |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| [Inside Nitro](/inside-arbitrum-nitro)                                                             | A technical deep dive into Nitro's architecture.  |
+| [Inside Nitro](/)                                                             | A technical deep dive into Nitro's architecture.  |
 | [Inside AnyTrust](/inside-anytrust)                                                                | A technical deep dive into the AnyTrust protocol. |
 | [Arbitrum whitepaper](https://github.com/OffchainLabs/nitro/blob/master/docs/Nitro-whitepaper.pdf) | The original whitepaper that introduced Nitro.    |
 | [DAO docs](https://docs.arbitrum.foundation/gentle-intro-dao-governance)                           | Docs that support members of the Arbitrum DAO.    |

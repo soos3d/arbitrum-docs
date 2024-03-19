@@ -1,6 +1,6 @@
 ---
 id: "L1ToL2MessageReaderClassic"
-title: "Class: L1ToL2MessageReaderClassic"
+title: "Class L1ToL2MessageReaderClassic"
 sidebar_label: "L1ToL2MessageReaderClassic"
 sidebar_position: 0
 custom_edit_url: null

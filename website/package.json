@@ -1,0 +1,19 @@
+{
+  "name": "arbitrum-docs",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vocs dev",
+    "build": "vocs build -o ../build",
+    "preview": "vocs preview"
+  },
+  "dependencies": {
+    "@arbitrum/sdk": "^3.3.1",
+    "@types/react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "remark-mermaidjs": "^6.0.0",
+    "typescript": "latest",
+    "vocs": "latest"
+  }
+}

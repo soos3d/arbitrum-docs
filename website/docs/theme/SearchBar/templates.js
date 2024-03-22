@@ -1,12 +1,12 @@
-const prefix = 'algolia-docsearch';
+const prefix = "algolia-docsearch";
 const suggestionPrefix = `${prefix}-suggestion`;
 const footerPrefix = `${prefix}-footer`;
 
 const templates = {
   suggestion: `
   <a class="${suggestionPrefix}
-    {{#isCategoryHeader}}${suggestionPrefix}__main{{/isCategoryHeader}}
-    {{#isSubCategoryHeader}}${suggestionPrefix}__secondary{{/isSubCategoryHeader}}
+    {
+    {
     "
     aria-label="Link to the result"
     href="{{{url}}}"
@@ -18,11 +18,11 @@ const templates = {
       <div class="${suggestionPrefix}--subcategory-column">
         <span class="${suggestionPrefix}--subcategory-column-text">{{{subcategory}}}</span>
       </div>
-      {{#isTextOrSubcategoryNonEmpty}}
+      {
       <div class="${suggestionPrefix}--content">
         <div class="${suggestionPrefix}--subcategory-inline">{{{subcategory}}}</div>
         <div class="${suggestionPrefix}--title">{{{title}}}</div>
-        {{#text}}<div class="${suggestionPrefix}--text">{{{text}}}</div>{{/text}}
+        {
       </div>
       {{/isTextOrSubcategoryNonEmpty}}
     </div>
@@ -30,8 +30,8 @@ const templates = {
   `,
   suggestionSimple: `
   <div class="${suggestionPrefix}
-    {{#isCategoryHeader}}${suggestionPrefix}__main{{/isCategoryHeader}}
-    {{#isSubCategoryHeader}}${suggestionPrefix}__secondary{{/isSubCategoryHeader}}
+    {
+    {
     suggestion-layout-simple
   ">
     <div class="${suggestionPrefix}--category-header">
@@ -46,19 +46,19 @@ const templates = {
           {{/isLvl1}}
         {{/isLvl0}}
         <div class="${suggestionPrefix}--title ${suggestionPrefix}--category-header-item">
-            {{#isLvl2}}
+            {
                 {{{title}}}
             {{/isLvl2}}
-            {{#isLvl1}}
+            {
                 {{{subcategory}}}
             {{/isLvl1}}
-            {{#isLvl0}}
+            {
                 {{{category}}}
             {{/isLvl0}}
         </div>
     </div>
     <div class="${suggestionPrefix}--wrapper">
-      {{#text}}
+      {
       <div class="${suggestionPrefix}--content">
         <div class="${suggestionPrefix}--text">{{{text}}}</div>
       </div>

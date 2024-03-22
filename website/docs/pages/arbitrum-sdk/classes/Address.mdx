@@ -1,0 +1,146 @@
+---
+id: "Address"
+title: "Class Address"
+sidebar_label: "Address"
+sidebar_position: 0
+custom_edit_url: null
+---
+
+Ethereum/Arbitrum address class
+
+## Constructors
+
+### constructor
+
+• **new Address**(`value`): [`Address`](Address.mdx)
+
+Ethereum/Arbitrum address class
+
+#### Parameters
+
+| Name    | Type     | Description                                                  |
+| :------ | :------- | :----------------------------------------------------------- |
+| `value` | `string` | A valid Ethereum address. Doesn't need to be checksum cased. |
+
+#### Returns
+
+[`Address`](Address.mdx)
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:18](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L18)
+
+## Properties
+
+### ADDRESS_ALIAS_OFFSET_BIG_INT
+
+• `Private` `Readonly` **ADDRESS_ALIAS_OFFSET_BIG_INT**: `bigint`
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:10](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L10)
+
+---
+
+### ADDRESS_BIT_LENGTH
+
+• `Private` `Readonly` **ADDRESS_BIT_LENGTH**: `160`
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:11](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L11)
+
+---
+
+### ADDRESS_NIBBLE_LENGTH
+
+• `Private` `Readonly` **ADDRESS_NIBBLE_LENGTH**: `number`
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:12](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L12)
+
+---
+
+### value
+
+• `Readonly` **value**: `string`
+
+A valid Ethereum address. Doesn't need to be checksum cased.
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:18](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L18)
+
+## Methods
+
+### alias
+
+▸ **alias**(`address`, `forward`): `string`
+
+#### Parameters
+
+| Name      | Type      |
+| :-------- | :-------- |
+| `address` | `string`  |
+| `forward` | `boolean` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:23](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L23)
+
+---
+
+### applyAlias
+
+▸ **applyAlias**(): [`Address`](Address.mdx)
+
+Find the L2 alias of an L1 address
+
+#### Returns
+
+[`Address`](Address.mdx)
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:43](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L43)
+
+---
+
+### equals
+
+▸ **equals**(`other`): `boolean`
+
+#### Parameters
+
+| Name    | Type                     |
+| :------ | :----------------------- |
+| `other` | [`Address`](Address.mdx) |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:55](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L55)
+
+---
+
+### undoAlias
+
+▸ **undoAlias**(): [`Address`](Address.mdx)
+
+Find the L1 alias of an L2 address
+
+#### Returns
+
+[`Address`](Address.mdx)
+
+#### Defined in
+
+[src/lib/dataEntities/address.ts:51](https://github.com/OffchainLabs/arbitrum-sdk/blob/4d1c5a4e2/src/lib/dataEntities/address.ts#L51)

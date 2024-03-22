@@ -3,8 +3,6 @@ title: "Troubleshooting Run a node"
 author: symbolpunk
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 
 # Troubleshooting Run a node
 
@@ -51,106 +49,7 @@ If you're running into unexpected outputs or errors, the following checklist may
       </div>
       <div className="guidance-container">
         <label htmlFor="tc-2">2. Review the docs</label>
-        <Tabs
-          className="tabgroup-with-label node-type-tabgroup"
-          groupId="node-type"
-          defaultValue="full-node"
-          values={[
-            { label: "Node type:", value: "label" },
-            { label: "Full node", value: "full-node" },
-            { label: "Archive node", value: "archive-node" },
-            { label: "Validator node", value: "validator-node" },
-          ]}
-        >
-          <TabItem className="unclickable-element" value="label"></TabItem>
-          <TabItem value="full-node">
-            <Tabs
-              className="tabgroup-with-label network-tabgroup"
-              groupId="network"
-              defaultValue="arb-one-nitro"
-              values={[
-                { label: "Network:", value: "label" },
-                { label: "Arbitrum One (Nitro)", value: "arb-one-nitro" },
-                { label: "Arbitrum One (Classic)", value: "arb-one-classic" },
-                { label: "Arbitrum Nova", value: "arb-nova" },
-                { label: "Arbitrum Goerli", value: "arb-goerli" },
-                { label: "Arbitrum Sepolia", value: "arb-sepolia" },
-                { label: "Localhost", value: "localhost" },
-              ]}
-            >
-              <TabItem className="unclickable-element" value="label"></TabItem>
-              <TabItem value="arb-one-nitro">
-                <p>
-                  The{" "}
-                  <a href="/node-running/how-tos/running-a-full-node">
-                    How to run a full node (Nitro)
-                  </a>{" "}
-                  may address your issue.
-                </p>
-              </TabItem>
-              <TabItem value="arb-one-classic">
-                <p>
-                  <a href="/node-running/how-tos/running-a-classic-node">
-                    How to run a full node (Classic, pre-Nitro)
-                  </a>{" "}
-                  may address your issue.
-                </p>
-              </TabItem>
-              <TabItem value="arb-nova">
-                <p>
-                  The{" "}
-                  <a href="/node-running/how-tos/running-a-full-node">
-                    How to run a full node (Nitro)
-                  </a>{" "}
-                  may address your issue.
-                </p>
-              </TabItem>
-              <TabItem value="arb-goerli">
-                <p>
-                  The{" "}
-                  <a href="/node-running/how-tos/running-a-full-node">
-                    How to run a full node (Nitro)
-                  </a>{" "}
-                  may address your issue.
-                </p>
-              </TabItem>
-              <TabItem value="arb-sepolia">
-                <p>
-                  The{" "}
-                  <a href="/node-running/how-tos/running-a-full-node">
-                    How to run a full node (Nitro)
-                  </a>{" "}
-                  may address your issue.
-                </p>
-              </TabItem>
-              <TabItem value="localhost">
-                <p>
-                  The{" "}
-                  <a href="/node-running/how-tos/local-dev-node">
-                    How to run a local dev node
-                  </a>{" "}
-                  may address your issue.
-                </p>
-              </TabItem>
-            </Tabs>
-          </TabItem>
-          <TabItem value="archive-node">
-            <p>
-              <a href="/node-running/how-tos/running-an-archive-node">
-                How to run an archive node
-              </a>{" "}
-              may address your issue.
-            </p>
-          </TabItem>
-          <TabItem value="validator-node">
-            <p>
-              <a href="/node-running/how-tos/running-a-validator">
-                How to run a validator
-              </a>{" "}
-              may address your issue.
-            </p>
-          </TabItem>
-        </Tabs>
+     
       </div>
     </div>
     <div className="task">
@@ -253,7 +152,7 @@ Common troubleshooting scenarios and solutions are detailed below.
   </tbody>
 </table>
 
-{/\*
+{ /*
 
 #### Troubleshooting your feed relay
 
@@ -271,7 +170,7 @@ import FeedRelayTroubleshootingPartial from "../../../arbitrum-docs/node-running
 
 <br />
 
-import { GenerateTroubleshootingReportWidget } from "../../components/GenerateTroubleshootingReportWidget.js";
+import { GenerateTroubleshootingReportWidget } from "../../components/GenerateTroubleshootingReportWidget.jsx";
 
 <GenerateTroubleshootingReportWidget />
 
@@ -281,10 +180,10 @@ import { GenerateTroubleshootingReportWidget } from "../../components/GenerateTr
     i.e., private keys)
   </p>
   <textarea
-    id="vn-cmd"
-    rows="3"
-    placeholder='Paste here the command you use to run your node: "docker run ..."'
-  ></textarea>
+        id="vn-cmd"
+        rows="3"
+        placeholder='Paste here the command you use to run your node: "docker run ..."'
+      ></textarea>
   <p>Unexpected output</p>
   <span>
     <strong>Tip:</strong> Paste the ~100 lines of output{" "}
@@ -293,10 +192,10 @@ import { GenerateTroubleshootingReportWidget } from "../../components/GenerateTr
   </span>
   <code>docker logs --tail 100 YOUR_CONTAINER_ID</code>
   <textarea
-    id="output"
-    rows="3"
-    placeholder="Paste your unexpected output here..."
-  ></textarea>
+        id="output"
+        rows="3"
+        placeholder="Paste your unexpected output here..."
+      ></textarea>
   <a id="generate-report" className="generate-report">
     Generate troubleshooting report
   </a>
@@ -305,4 +204,4 @@ import { GenerateTroubleshootingReportWidget } from "../../components/GenerateTr
   </div>
 </div>
 
-{/* todo: gpt-n + langchain + pinecone */}
+{ /* todo: gpt-n + langchain + pinecone */}

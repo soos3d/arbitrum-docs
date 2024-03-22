@@ -35,7 +35,7 @@ Provides read-only access for l2-to-l1-messages
 
 #### Overrides
 
-[L2ToL1Message](L2ToL1Message.mdx).[constructor](L2ToL1Message.md#constructor)
+[L2ToL1Message](L2ToL1Message.mdx).[constructor](L2ToL1Message.mdx#constructor)
 
 #### Defined in
 
@@ -134,7 +134,7 @@ e is Object
 
 #### Inherited from
 
-[L2ToL1Message](L2ToL1Message.mdx).[isClassic](L2ToL1Message.md#isclassic)
+[L2ToL1Message](L2ToL1Message.mdx).[isClassic](L2ToL1Message.mdx#isclassic)
 
 #### Defined in
 
@@ -167,7 +167,7 @@ In order to check if the message has been executed proof info must be provided.
 
 ### waitUntilReadyToExecute
 
-▸ **waitUntilReadyToExecute**(`l2Provider`, `retryDelay?`): `Promise`\<[`CONFIRMED`](../enums/L2ToL1MessageStatus.md#confirmed) \| [`EXECUTED`](../enums/L2ToL1MessageStatus.md#executed)\>
+▸ **waitUntilReadyToExecute**(`l2Provider`, `retryDelay?`): `Promise`\<[`CONFIRMED`](../enums/L2ToL1MessageStatus.mdx#confirmed) \| [`EXECUTED`](../enums/L2ToL1MessageStatus.mdx#executed)\>
 
 Waits until the outbox entry has been created, and will not return until it has been.
 WARNING: Outbox entries are only created when the corresponding node is confirmed. Which
@@ -182,7 +182,7 @@ can take 1 week+, so waiting here could be a very long operation.
 
 #### Returns
 
-`Promise`\<[`CONFIRMED`](../enums/L2ToL1MessageStatus.md#confirmed) \| [`EXECUTED`](../enums/L2ToL1MessageStatus.md#executed)\>
+`Promise`\<[`CONFIRMED`](../enums/L2ToL1MessageStatus.mdx#confirmed) \| [`EXECUTED`](../enums/L2ToL1MessageStatus.mdx#executed)\>
 
 outbox entry status (either executed or confirmed but not pending)
 
@@ -218,7 +218,7 @@ Instantiates a new `L2ToL1MessageWriter` or `L2ToL1MessageReader` object.
 
 #### Inherited from
 
-[L2ToL1Message](L2ToL1Message.mdx).[fromEvent](L2ToL1Message.md#fromevent)
+[L2ToL1Message](L2ToL1Message.mdx).[fromEvent](L2ToL1Message.mdx#fromevent)
 
 #### Defined in
 
@@ -253,7 +253,7 @@ Any classic and nitro events that match the provided filters.
 
 #### Inherited from
 
-[L2ToL1Message](L2ToL1Message.mdx).[getL2ToL1Events](L2ToL1Message.md#getl2tol1events)
+[L2ToL1Message](L2ToL1Message.mdx).[getL2ToL1Events](L2ToL1Message.mdx#getl2tol1events)
 
 #### Defined in
 

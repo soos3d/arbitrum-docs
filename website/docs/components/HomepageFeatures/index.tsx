@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "@docusaurus/Link";
+// import a from "@docusaurus/a";
 
-import styles from "./styles.module.css";
+// import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
@@ -57,23 +57,20 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, description, href }: FeatureItem) {
   return (
-    <Link href={href}>
-      <div className={styles.featureCard}>
-        <div className={styles.svgWrapper}>
-          {/* <Svg className={styles.featureSvg} role="img" /> */}
-        </div>
+    <a href={href}>
+      <div>
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
-    </Link>
+    </a>
   );
 }
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles.features}>
+    <section>
       <h3>Resources</h3>
-      <div className={styles.featureCardsWrapper}>
+      <div>
         {FeatureList.map((props, idx) => (
           <Feature key={idx} {...props} />
         ))}

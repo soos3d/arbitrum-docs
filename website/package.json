@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vocs dev",
-    "build": "vocs build -o ../build",
+    "build": "yarn playwright install && vocs build -o ../build",
     "preview": "vocs preview"
   },
   "dependencies": {

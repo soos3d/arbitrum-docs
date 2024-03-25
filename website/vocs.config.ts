@@ -9,484 +9,267 @@ export default defineConfig({
   sidebar: [
     {
       text: "Welcome",
+      collapsed: true,
       items: [
         {
-          text: "Arbitrum Gentle Introduction",
+          text: "A gentle introduction",
           link: "/welcome/arbitrum-gentle-introduction",
         },
-        { text: "Get Started", link: "/welcome/get-started" },
+        { text: "Get started", link: "/welcome/get-started" },
       ],
     },
     {
-      text: "Intro",
-      items: [
-        { text: "Introduction", link: "/intro/intro" },
-        { text: "Glossary", link: "/intro/glossary" },
-      ],
-    },
-    {
-      text: "ArbOS",
-      items: [
-        { text: "ArbOS Overview", link: "/arbos/arbos" },
-        { text: "Gas Management", link: "/arbos/gas" },
-        { text: "Geth Compatibility", link: "/arbos/geth" },
-        { text: "Layer 1 Pricing", link: "/arbos/l1-pricing" },
-        {
-          text: "L1 to L2 Messaging",
-          link: "/arbos/l1-to-l2-messaging",
-        },
-        {
-          text: "L2 to L1 Messaging",
-          link: "/arbos/l2-to-l1-messaging",
-        },
-      ],
-    },
-    {
-      text: "Inside Arbitrum Nitro",
-      link: "/inside-arbitrum-nitro/inside-arbitrum-nitro",
-    },
-    { text: "Why Nitro?", link: "/why-nitro" },
-    {
-      text: "Proving",
+      text: "Build decentralized apps",
+      collapsed: true,
       items: [
         {
-          text: "Challenge Manager",
-          link: "/proving/challenge-manager",
-        },
-        { text: "OSP Assumptions", link: "/proving/osp-assumptions" },
-        { text: "WASM to WAVM", link: "/proving/wasm-to-wavm" },
-        {
-          text: "WAVM Custom Opcodes",
-          link: "/proving/wavm-custom-opcodes",
-        },
-        { text: "WAVM Floats", link: "/proving/wavm-floats" },
-        { text: "WAVM Modules", link: "/proving/wavm-modules" },
-      ],
-    },
-    { text: "Assertion Tree", link: "/assertion-tree" },
-    {
-      text: "Getting Started",
-      items: [
-        { text: "For Developers", link: "/getting-started" },
-        { text: "For Users", link: "/getting-started-users" },
-      ],
-    },
-    {
-      text: "Node Running",
-      items: [
-        {
-          text: "Gentle Introduction",
-          link: "/node-running/gentle-introduction-run-node",
+          text: "Quickstart (Solidity)",
+          link: "/for-devs/quickstart-solidity-hardhat",
         },
         {
-          text: "Quickstart",
-          link: "/node-running/quickstart-running-a-node",
+          text: "Estimate gas",
+          link: "/devs-how-tos/how-to-estimate-gas",
         },
         {
-          text: "How-tos",
+          text: "Chains and testnets",
+          link: "/for-devs/concepts/public-chains",
+        },
+        {
+          text: "Cross-chain messaging",
+          link: "/for-devs/cross-chain-messsaging",
+        },
+        {
+          text: "Arbitrum vs Ethereum",
+          collapsed: true,
           items: [
             {
-              text: "Run a Full Node",
-              link: "/node-running/how-tos/running-a-full-node",
+              text: "Comparison overview",
+              link: "/for-devs/concepts/differences-between-arbitrum-ethereum/overview",
             },
             {
-              text: "Run a Local Dev Node",
-              link: "/node-running/how-tos/local-dev-node",
+              text: "Block numbers and time",
+              link: "/for-devs/concepts/differences-between-arbitrum-ethereum/block-numbers-and-time",
             },
             {
-              text: "Data Availability Committee",
-              items: [
-                {
-                  text: "Introduction",
-                  link: "/node-running/how-tos/data-availability-committee/introduction",
-                },
-                {
-                  text: "Configure the DAC in Your Chain",
-                  link: "/node-running/how-tos/data-availability-committee/configure-the-dac-in-your-chain",
-                },
-                {
-                  text: "Deploy a DAS",
-                  link: "/node-running/how-tos/data-availability-committee/deploy-a-das",
-                },
-                {
-                  text: "Deploy a Mirror DAS",
-                  link: "/node-running/how-tos/data-availability-committee/deploy-a-mirror-das",
-                },
-              ],
+              text: "RPC methods",
+              link: "/for-devs/concepts/differences-between-arbitrum-ethereum/rpc-methods",
             },
-            // ... other how-tos ...
+            {
+              text: "Solidity support",
+              link: "/for-devs/concepts/differences-between-arbitrum-ethereum/solidity-support",
+            },
+          ],
+        },
+        {
+          text: "Oracles",
+          collapsed: true,
+          items: [
+            {
+              text: "Overview",
+              link: "/for-devs/concepts/oracles",
+            },
+            {
+              text: "Use oracles in your app",
+              link: "/devs-how-tos/how-to-use-oracles",
+            },
+            {
+              text: "Reference",
+              link: "/for-devs/dev-tools-and-resources/oracles",
+            },
+          ],
+        },
+        {
+          text: "Precompiles",
+          collapsed: true,
+          items: [
+            {
+              text: "Overview",
+              link: "/for-devs/concepts/precompiles",
+            },
+            {
+              text: "Reference",
+              link: "/for-devs/dev-tools-and-resources/precompiles",
+            },
+          ],
+        },
+        {
+          text: "NodeInterface",
+          collapsed: true,
+          items: [
+            {
+              text: "Overview",
+              link: "/for-devs/concepts/nodeinterface",
+            },
+            {
+              text: "Reference",
+              link: "/for-devs/dev-tools-and-resources/nodeinterface",
+            },
+          ],
+        },
+        {
+          text: "Token bridging",
+          collapsed: true,
+          items: [
+            {
+              text: "Overview",
+              link: "/for-devs/concepts/token-bridge/token-bridge-overview",
+            },
+            {
+              text: "Get started",
+              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-overview",
+            },
+            {
+              text: "Use the standard gateway",
+              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-standard",
+            },
+            {
+              text: "Use the generic-custom gateway",
+              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-generic-custom",
+            },
+            {
+              text: "Use the custom gateway",
+              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-custom-gateway",
+            },
+            {
+              text: "Bridging Ether",
+              link: "/for-devs/concepts/token-bridge/token-bridge-ether",
+            },
+            {
+              text: "Bridging ERC-20 tokens",
+              link: "/for-devs/concepts/token-bridge/token-bridge-erc20",
+            },
           ],
         },
         {
           text: "Reference",
+          collapsed: true,
           items: [
             {
-              text: "L1 Ethereum RPC Providers",
-              link: "/node-running/reference/ethereum-beacon-rpc-providers",
+              text: "RPC endpoints and providers",
+              link: "/node-running/node-providers",
             },
             {
-              text: "ArbOS Software Releases",
-              items: [
-                {
-                  text: "Overview",
-                  link: "/node-running/reference/arbos-software-releases/overview",
-                },
-                {
-                  text: "ArbOS 20 Atlas",
-                  link: "/node-running/reference/arbos-software-releases/arbos20",
-                },
-                {
-                  text: "ArbOS 11",
-                  link: "/node-running/reference/arbos-software-releases/arbos11",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          text: "Troubleshooting",
-          link: "/node-running/troubleshooting-running-nodes",
-        },
-        { text: "FAQ", link: "/node-running/faq" },
-      ],
-    },
-    {
-      text: "For Developers",
-      items: [
-        { text: "Chain Parameters", link: "/for-devs/chain-params" },
-        {
-          text: "Concepts",
-          items: [
-            {
-              text: "Differences Between Arbitrum and Ethereum",
-              items: [
-                {
-                  text: "Overview",
-                  link: "/for-devs/concepts/differences-between-arbitrum-ethereum/overview",
-                },
-                {
-                  text: "Block Numbers and Time",
-                  link: "/for-devs/concepts/differences-between-arbitrum-ethereum/block-numbers-and-time",
-                },
-                {
-                  text: "RPC Methods",
-                  link: "/for-devs/concepts/differences-between-arbitrum-ethereum/rpc-methods",
-                },
-                {
-                  text: "Solidity Support",
-                  link: "/for-devs/concepts/differences-between-arbitrum-ethereum/solidity-support",
-                },
-              ],
+              text: "Smart contract addresses",
+              link: "/for-devs/useful-addresses",
             },
             {
-              text: "Node Interface",
-              link: "/for-devs/concepts/nodeinterface",
-            },
-            { text: "Oracles", link: "/for-devs/concepts/oracles" },
-            {
-              text: "Precompiles",
-              link: "/for-devs/concepts/precompiles",
+              text: "Chain parameters",
+              link: "/for-devs/chain-params",
             },
             {
-              text: "Public Chains",
-              link: "/for-devs/concepts/public-chains",
-            },
-            {
-              text: "Token Bridge",
-              items: [
-                {
-                  text: "Token Bridge Overview",
-                  link: "/for-devs/concepts/token-bridge/token-bridge-overview",
-                },
-                {
-                  text: "Bridging ERC20 Tokens",
-                  link: "/for-devs/concepts/token-bridge/token-bridge-erc20",
-                },
-                {
-                  text: "Bridging Ether",
-                  link: "/for-devs/concepts/token-bridge/token-bridge-ether",
-                },
-              ],
-            },
-          ],
-        },
-        { text: "Contribute", link: "/for-devs/contribute" },
-        {
-          text: "Cross-chain Messaging",
-          link: "/for-devs/cross-chain-messsaging",
-        },
-        {
-          text: "Dev Tools and Resources",
-          items: [
-            {
-              text: "Debugging Tools",
-              link: "/for-devs/dev-tools-and-resources/debugging-tools",
-            },
-            {
-              text: "Development Frameworks",
+              text: "Development frameworks",
               link: "/for-devs/dev-tools-and-resources/development-frameworks",
             },
             {
-              text: "Monitoring Tools and Block Explorers",
+              text: "Web3 libraries and tools",
+              link: "/for-devs/dev-tools-and-resources/web3-libraries-tools",
+            },
+            {
+              text: "Monitoring tools and block explorers",
               link: "/for-devs/dev-tools-and-resources/monitoring-tools-block-explorers",
             },
             {
-              text: "Node Interface",
-              link: "/for-devs/dev-tools-and-resources/nodeinterface",
+              text: "Debugging tools",
+              link: "/for-devs/dev-tools-and-resources/debugging-tools",
             },
             {
-              text: "Oracles",
-              link: "/for-devs/dev-tools-and-resources/oracles",
-            },
-            {
-              text: "Precompiles",
-              link: "/for-devs/dev-tools-and-resources/precompiles",
-            },
-            {
-              text: "Web3 Libraries and Tools",
-              link: "/for-devs/dev-tools-and-resources/web3-libraries-tools",
+              text: "Mainnet risks",
+              link: "/mainnet-risks",
             },
           ],
-        },
-        {
-          text: "Quickstart Solidity Hardhat",
-          link: "/for-devs/quickstart-solidity-hardhat",
         },
         {
           text: "Troubleshooting",
           link: "/for-devs/troubleshooting-building",
         },
-        { text: "Useful Addresses", link: "/for-devs/useful-addresses" },
-      ],
-    },
-    {
-      text: "Developers How-tos",
-      items: [
         {
-          text: "Bridge Tokens",
-          items: [
-            {
-              text: "Bridge Tokens Custom Gateway",
-              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-custom-gateway",
-            },
-            {
-              text: "Bridge Tokens Generic Custom",
-              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-generic-custom",
-            },
-            {
-              text: "Bridge Tokens Overview",
-              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-overview",
-            },
-            {
-              text: "Bridge Tokens Standard",
-              link: "/devs-how-tos/bridge-tokens/how-to-bridge-tokens-standard",
-            },
-          ],
+          text: "Arbitrum SDK",
+          link: "/sdk",
         },
         {
-          text: "Estimate Gas",
-          link: "/devs-how-tos/how-to-estimate-gas",
-        },
-        {
-          text: "Use Oracles",
-          link: "/devs-how-tos/how-to-use-oracles",
+          text: "Tutorials",
         },
       ],
     },
     {
-      text: "Bridge Tokens",
+      text: "Run an Orbit chain",
+      collapsed: true,
       items: [
         {
-          text: "USDC Concept",
-          link: "/bridge-tokens/concepts/usdc-concept",
-        },
-        {
-          text: "Gentle Introduction to Bridge",
-          link: "/bridge-tokens/gentle-introduction-bridge",
-        },
-      ],
-    },
-    { text: "Transaction Lifecycle", link: "/tx-lifecycle" },
-    { text: "Mainnet Risks", link: "/mainnet-risks" },
-    {
-      text: "Launch Orbit Chain",
-      items: [
-        {
-          text: "Gentle Introduction",
+          text: "A gentle introduction",
           link: "/launch-orbit-chain/orbit-gentle-introduction",
         },
         {
           text: "Quickstart",
           link: "/launch-orbit-chain/orbit-quickstart",
         },
-        {
-          text: "How-tos",
-          items: [
-            {
-              text: "Customize Deployment Config",
-              link: "/launch-orbit-chain/how-tos/customize-deployment-configuration",
-            },
-            {
-              text: "Customize Precompile",
-              link: "/launch-orbit-chain/how-tos/customize-precompile",
-            },
-            {
-              text: "Customize STF",
-              link: "/launch-orbit-chain/how-tos/customize-stf",
-            },
-            {
-              text: "Add Your Chain to the Bridge",
-              link: "/launch-orbit-chain/how-tos/add-orbit-chain-to-bridge-ui",
-            },
-            {
-              text: "Upgrade ArbOS",
-              link: "/launch-orbit-chain/how-tos/arbos-upgrade",
-            },
-          ],
-        },
-        {
-          text: "Concepts",
-          items: [
-            {
-              text: "Keyset Generation (AnyTrust Chains)",
-              link: "/launch-orbit-chain/concepts/anytrust-orbit-chain-keyset-generation",
-            },
-            {
-              text: "Orbit Chain Ownership",
-              link: "/launch-orbit-chain/concepts/chain-ownership",
-            },
-            {
-              text: "Custom Gas Token SDK",
-              link: "/launch-orbit-chain/concepts/custom-gas-token-sdk",
-            },
-            {
-              text: "Public Preview",
-              link: "/launch-orbit-chain/concepts/public-preview-expectations",
-            },
-          ],
-        },
-        {
-          text: "Reference",
-          items: [
-            {
-              text: "Command-line Options",
-              link: "/launch-orbit-chain/reference/command-line-options",
-            },
-            {
-              text: "Additional Configuration Parameters",
-              link: "/launch-orbit-chain/reference/additional-configuration-parameters",
-            },
-          ],
-        },
-        {
-          text: "Troubleshooting",
-          link: "/launch-orbit-chain/troubleshooting-building-orbit",
-        },
       ],
     },
     {
-      text: "Stylus",
+      text: "Write Stylus contracts",
+      collapsed: true,
       items: [
         {
-          text: "Gentle Introduction",
+          text: "A gentle introduction",
           link: "/stylus/stylus-gentle-introduction",
         },
-        { text: "Quickstart", link: "/stylus/stylus-quickstart" },
         {
-          text: "How-tos",
-          items: [
-            {
-              text: "Run a Local Dev Node",
-              link: "/stylus/how-tos/local-stylus-dev-node",
-            },
-            {
-              text: "Adding Support for New Languages",
-              link: "/stylus/how-tos/adding-support-for-new-languages",
-            },
-            {
-              text: "Optimizing Binaries",
-              link: "/stylus/how-tos/optimizing-binaries",
-            },
-          ],
-        },
-        {
-          text: "Concepts",
-          items: [
-            { text: "Gas and Ink", link: "/stylus/concepts/stylus-gas" },
-            {
-              text: "Public Preview",
-              link: "/stylus/concepts/public-preview-expectations",
-            },
-          ],
-        },
-        {
-          text: "Reference",
-          items: [
-            {
-              text: "Rust SDK Guide",
-              link: "/stylus/reference/rust-sdk-guide",
-            },
-            {
-              text: "Stylus SDK",
-              link: "/stylus/reference/stylus-sdk",
-            },
-            {
-              text: "Testnets",
-              link: "/stylus/reference/testnet-information",
-            },
-            {
-              text: "Opcode Hostio Pricing",
-              link: "/stylus/reference/opcode-hostio-pricing",
-            },
-          ],
-        },
-        {
-          text: "Troubleshooting",
-          link: "/stylus/troubleshooting-building-stylus",
+          text: "Quickstart (Rust)",
+          link: "/stylus/stylus-quickstart",
         },
       ],
     },
     {
-      text: "For Users",
+      text: "Run an Arbitrum node",
+      collapsed: true,
       items: [
-        { text: "Contribute", link: "/for-users/contribute" },
+        {
+          text: "Overview",
+          link: "/node-running/gentle-introduction-run-node",
+        },
+        {
+          text: "Quickstart",
+          link: "/node-running/quickstart-running-a-node",
+        },
+      ],
+    },
+    {
+      text: "Arbitrum bridge",
+      collapsed: true,
+      items: [
+        {
+          text: "Quickstart",
+          link: "/getting-started-users",
+        },
         {
           text: "Troubleshooting",
           link: "/for-users/troubleshooting-users",
         },
-      ],
-    },
-    {
-      text: "Sequencer",
-      link: "/sequencer",
-    },
-    { text: "Inside AnyTrust", link: "/inside-anytrust" },
-    {
-      text: "Diagrams",
-      items: [
         {
-          text: "Challenge Manager",
-          link: "/diagrams/_challenge-manager",
+          text: "USDC on Arbitrum One",
+          link: "/bridge-tokens/concepts/usdc-concept",
         },
-        { text: "Deposit ETH", link: "/diagrams/_deposit-eth" },
-        { text: "Withdraw ETH", link: "/diagrams/_withdraw-eth" },
       ],
     },
-    { text: "Example", link: "/example" },
     {
-      text: "Learn More",
+      text: "Orbit SDK",
+      collapsed: true,
       items: [
-        { text: "Contribute", link: "/learn-more/contribute" },
-        { text: "FAQ", link: "/learn-more/faq" },
+        { text: "Overview", link: "/orbit-sdk" },
+        {
+          text: "Modules",
+          items: [{ text: "Utils", link: "/orbit-sdk/modules/utils" }],
+        },
       ],
     },
-    { text: "Audit Reports", link: "/audit-reports" },
     {
       text: "Arbitrum SDK",
+      collapsed: true,
       items: [
         { text: "Overview", link: "/arbitrum-sdk" },
         {
           text: "Classes",
+          collapsed: true,
           items: [
             { text: "Address", link: "/arbitrum-sdk/classes/Address" },
             {
@@ -552,6 +335,7 @@ export default defineConfig({
         },
         {
           text: "Enums",
+          collapsed: true,
           items: [
             {
               text: "EthDepositStatus",
@@ -569,6 +353,7 @@ export default defineConfig({
         },
         {
           text: "Interfaces",
+          collapsed: true,
           items: [
             {
               text: "L1ContractTransaction",
@@ -597,14 +382,21 @@ export default defineConfig({
       ],
     },
     {
-      text: "Orbit SDK",
-      items: [
-        { text: "Overview", link: "/orbit-sdk" },
-        {
-          text: "Modules",
-          items: [{ text: "Utils", link: "/orbit-sdk/modules/utils" }],
-        },
-      ],
+      text: "How Arbitrum works",
+      collapsed: true,
+      items: [],
+    },
+    {
+      text: "FAQ",
+      link: "/learn-more/faq",
+    },
+    {
+      text: "Glossary",
+      link: "/intro/glossary",
+    },
+    {
+      text: "Contribute",
+      link: "/for-devs/contribute",
     },
   ],
 });

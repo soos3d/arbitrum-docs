@@ -67,13 +67,13 @@ The `chainConfig` parameter within the `Config` structure is an essential elemen
 
 Start by setting up the chain configuration parameters. This includes defining key elements like:
 
-| Parameter                   | Description                                                                                                                                     |
-| :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `chainId`                   | Your Orbit chain's unique identifier. It differentiates your chain from others in the ecosystem.                                                |
-| `DataAvailabilityCommittee` | Set to `false`, this boolean makes your chain as a Rollup, set to `true` configures it as an AnyTrust chain.                                    |
-| `InitialChainOwner`         | Identifies who owns and controls the chain.                                                                                                     |
-| `MaxCodeSize  `             | Sets the maximum size for contract bytecodes on the Orbit chain. e.g. Ethereum mainnet has a limit of 24,576 Bytes.                             |
-| `MaxInitCodeSize`           | Similar to `MaxCodeSize`, defines the maximum size for your Orbit chain's **initialization** code. e.g. Ethereum mainnet limit is 49,152 Bytes. |
+| Parameter                  | Type       | Description                                                                                                                                     |
+| :--------------------------|----------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `chainId`                  | `number`   | Your Orbit chain's unique identifier. It differentiates your chain from others in the ecosystem.                                                |
+| `DataAvailabilityCommittee`| `boolean`  | Set to `false`, this boolean makes your chain as a Rollup, set to `true` configures it as an AnyTrust chain.                                    |
+| `InitialChainOwner`        | `Address`  | Identifies who owns and controls the chain.                                                                                                     |
+| `MaxCodeSize  `            | `number`   | Sets the maximum size for contract bytecodes on the Orbit chain. e.g. Ethereum mainnet has a limit of 24,576 Bytes.                             |
+| `MaxInitCodeSize`          | `number`   | Similar to `MaxCodeSize`, defines the maximum size for your Orbit chain's **initialization** code. e.g. Ethereum mainnet limit is 49,152 Bytes. |
 
 For an AnyTrust chain, you need to set the `DataAvailabilityCommittee` to **true**. This setting is crucial as it indicates the chain's reliance on a committee for data availability, which is a hallmark of the AnyTrust model.
 

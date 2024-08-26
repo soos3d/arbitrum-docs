@@ -1,7 +1,7 @@
 const L1_BLOCK_TIME_SECONDS = 12.1;
 
-const arbOneDisputeWindowBlocks = 45818;
-const novaDisputeWindowBlocks = 45818;
+const arbOneDisputeWindowBlocks = 49983;
+const novaDisputeWindowBlocks = 49983;
 const goerliDisputeWindowBlocks = 20;
 const sepoliaDisputeWindowBlocks = 20;
 
